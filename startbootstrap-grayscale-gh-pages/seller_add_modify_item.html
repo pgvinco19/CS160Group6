@@ -40,8 +40,8 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">
-                <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
+            <a class="navbar-brand page-scroll" href="index.html">
+                <i class="fa fa-play-circle"></i> <span class="light">Ticket Home</span>
             </a>
         </div>
 
@@ -53,13 +53,10 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about">Seller</a>
+                    <a class="page-scroll" href="index.html">Seller</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#download">Buyer</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
+                    <a class="page-scroll" href="index.html#contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -70,36 +67,35 @@
 
 
 <section id="edit_product" class="container content-section">
-    <div class="container">
-        <h2>Edit Ticket</h2>
+        <h2 class="text-center">Edit Ticket</h2>
 
-        <form class="form-horizontal">
+        <form class="form">
+            <div class="form-group col-sm-12">
+                <label class="control-label" for="eventName">Event Name:</label>
+                <input type="text" class="form-control" id="eventName" placeholder="Enter Event Name">
+            </div>
+
             <div class="form-group">
-                <label class="control-label col-xs-2" for="eventName">Event Name:</label>
-                <div class="col-xs-10">
-                    <input type="text" class="form-control" id="eventName" placeholder="Enter Event Name">
+                <div class="col-sm-6">
+                    <label for="street_address">Street Address:</label>
+                    <input class="form-control" id="street_address" type="text" placeholder="Enter Street Address">
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="city">City:</label>
+                    <input class="form-control" id="city" type="text" placeholder="Enter City">
                 </div>
             </div>
 
             <div class="form-group">
-                <div class="col-xs-5">
-                    <label for="ex1">Street Address:</label>
-                    <input class="form-control" id="ex1" type="text" placeholder="Enter Street Address">
+                <div class="col-sm-6">
+                    <label for="state_initial">State Initial:</label>
+                    <input class="form-control" id="state_initial" type="text" placeholder="Enter State Initial">
                 </div>
 
-                <div class="col-xs-3">
-                    <label for="ex2">City:</label>
-                    <input class="form-control" id="ex2" type="text" placeholder="Enter City">
-                </div>
-
-                <div class="col-xs-2">
-                    <label for="ex3">State Initial:</label>
-                    <input class="form-control" id="ex3" type="text" placeholder="Enter State Initial">
-                </div>
-
-                <div class="col-xs-2">
-                    <label for="ex4">Zip:</label>
-                    <input class="form-control" id="ex4" type="number" placeholder="Enter Zip Code">
+                <div class="col-sm-6">
+                    <label for="zip_code">Zip:</label>
+                    <input class="form-control" id="zip_code" type="number" placeholder="Enter Zip Code">
                 </div>
             </div>
 
@@ -151,7 +147,7 @@
                 </div>
             </div>
 
-            <div class="form-group col-sm-12">
+            <div class="form-group col-xs-12">
                 <label class="control-label" for="event_description">Event Description:</label>
                 <textarea class="form-control" id="event_description" rows="5"
                           placeholder="Write a small description about this event here!!!"></textarea>
@@ -159,14 +155,13 @@
 
 
             <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
+                <div class="col-sm-12">
                     <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
                 </div>
             </div>
         </form>
 
-
-    </div>
 </section>
 
 
