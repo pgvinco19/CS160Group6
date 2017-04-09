@@ -1,10 +1,10 @@
 <?php
 
-include("connection.php");
+
+
+echo "Hello World";
 
 
 
-
-mysqli_close();
 
 ?>
