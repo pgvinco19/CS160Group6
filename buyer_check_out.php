@@ -5,6 +5,6 @@ include("connection.php");
 
 
 
-mysqli_close();
+mysqli_close($db);
 
 ?>
