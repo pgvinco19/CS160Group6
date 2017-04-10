@@ -19,52 +19,63 @@ if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
 
-$sql = "SELECT * FROM Users";
-$result = mysqli_query($db, $sql);
+$sql = "SELECT firstName, lastName, email, streetAddress, city, zipCode, phoneNumber FROM User";
+$response = mysqli_query($db, $sql);
 
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    while($row = mysqli_fetch_assoc($result)) {
-        echo $row . "<br>";
+echo '<table>';
+
+if($response){
+
+    while($row = mysqli_fetch_array($response)){
+
+    echo '<tr><td align="left">' .
+        $row['firstName'] . '</td><td align="left">' .
+        $row['lastName'] . '</td><td align="left">' .
+        $row['email'] . '</td><td align="left">' .
+        $row['streetAddress'] . '</td><td align="left">' .
+        $row['city'] . '</td><td align="left">' .
+        $row['state'] . '</td><td align="left">' .
+        $row['zipCode'] . '</td><td align="left">' .
+        $row['phoneNumber'] . '</td><td align="left">';
+
+    echo '</tr>';
     }
-} else {
-    echo "0 results";
+
+    echo '</table>';
+
+}
+else {
+
+    echo "Couldn't issue database query<br />";
+
+    echo mysqli_error($db);
+
 }
 
-// prepare and bind
-$stmt = $db->prepare("INSERT INTO `Ticket Products` (productID, clientID, numberOfTickets, eventName, eventDate, eventLocation, ticketPrice, eventCategory, eventDescription) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("iiisssiss", $productID, $clientID, $numberOfTickets, $eventName, $eventDate, $eventLocation, $ticketPrice, $eventCategory, $eventDescription);
 
-$streetAddress = "myAddress";
-$city = "San Jose";
-$state_initial = "CA";
-$zip_code = 95111;
+$test_query = "SHOW TABLES FROM cs160database";
+$result = mysqli_query($db, $test_query);
 
-$productID = 132465789;
-$clientID = 231;
-$numberOfTickets = 5;
-$eventName = "my event Name";
-$eventDate = "2017-01-01";
-$eventLocation = $streetAddress . ", " . $city . $state_initial . ", " . $zip_code;
-$ticketPrice = 100;
-$eventDescription = "Hello World";
-$eventCategory = "Music";
-#NULL for URL
-$stmt->execute();
+$tblCnt = 0;
+while($tbl = mysqli_fetch_array($result))
+{
+    $tblCnt++;
+    echo $tbl[0]."<br />\n";
+}
+if (!$tblCnt) {
+    echo "There are no tables<br />\n";
+} else {
+    echo "There are $tblCnt tables<br />\n";
+}
 
-echo $eventLocation;
-echo "New records created successfully";
 
-$stmt->close();
-$db->close();
+
+
+// Close connection to the database
 mysqli_close($db);
 
+
 ?>
-?>
-
-
-
-
 
 </body>
 </html>
