@@ -42,4 +42,7 @@ if($affected_rows != 1)
 mysqli_stmt_close($stmt);
 mysqli_close($db);
 
+header('Location: startbootstrap-grayscale-gh-pages/seller_main_page.html');
+exit;
+
 ?>
