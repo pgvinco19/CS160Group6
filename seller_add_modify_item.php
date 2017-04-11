@@ -26,20 +26,14 @@ eventLocation, ticketPrice, eventDescription, eventCategory) VALUES (?, ?, ?, ?,
 $stmt = mysqli_prepare($db, $sql_query);
 
 //Bind the Variables to sql
-mysqli_stmt_bind_param($stmt, "iisssiss", $TPclientID, $numberOfTickets, $eventName, $eventDate,
+mysqli_stmt_bind_param($stmt, "iisssdss", $TPclientID, $numberOfTickets, $eventName, $eventDate,
         $eventLocation, $ticketPrice, $eventDescription, $eventCategory);
 
 //Execute Code
 mysqli_stmt_execute($stmt);
 
 $affected_rows = mysqli_stmt_affected_rows($stmt);
-if($affected_rows == 1)
-{
-    echo 'Success';
-    mysqli_stmt_close($stmt);
-
-}
-else
+if($affected_rows != 1)
 {
     echo 'Error Occurred<br />';
     echo mysqli_error();
