@@ -167,13 +167,13 @@ button {
 
 <section id="edit_profile" >
 
-    <div class="container" style="overflow-x:auto;">
-        <?php
+            <div class="container" style="overflow-x:auto;">
+                <?php
 
                 include("php/sellerMainDisplayTickets.php");
 
                 ?>
-    </div>
+            </div>
 
 
     <div align = "center"> 
