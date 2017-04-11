@@ -29,7 +29,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-table {
+        table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
@@ -106,7 +106,7 @@ button {
      between the labels and their text fields */
   margin-left: .5em;
 }
-
+#editProfile{display:none;}
 </style>
 
 </head>
@@ -152,20 +152,32 @@ button {
 </section>
 
 <section id = "button_section">
+<script type="text/javascript">
+<!--
+function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if(e.style.display == 'block')
+        e.style.display = 'none';
+    else
+        e.style.display = 'block';
+}
 
+
+//-->
+</script>
             <div class="button_section">
                 <div style ='float: left' class = "button_1">
-                    <button type="submit" class="btn btn-default">Add Product</button>
+                    <a href="seller_add_modify_item.html" type="submit" class="btn btn-default">Add Product</a>
                 </div>
                    <div style ='float: right' class = "button_2" >
-                    <button type="submit" class="btn btn-default"> Edit Profile</button>
+                    <a href="#editProfile" onclick="toggle_visibility('editProfile')" type="submit" class="btn btn-default"> Edit Profile</a>
                 </div>
             </div>
-    
+
 </section>
 
 
-<section id="edit_profile" >
+<section id="sellerMain">
 
             <div class="container" style="overflow-x:auto;">
                 <?php
@@ -176,7 +188,7 @@ button {
             </div>
 
 
-    <div align = "center"> 
+    <div id='editProfile'; align = "center"; display="none">
     <form action="/my-handling-form-page" method="post">
     <div>
         <label for="name">First Name:</label>
