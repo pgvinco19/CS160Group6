@@ -29,4 +29,5 @@ if(isset($_GET["submit"])){
 				$error = "Incorrect username or password"; 
 			}
 		}
+
 ?>

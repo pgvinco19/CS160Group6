@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php session_start();
 
-<?php
-
-include("../connection.php");
+//var_dump($GLOBALS);
+var_dump($_SESSION);
+//echo $_SESSION['productID'];
 
 $buyerLocation = $_GET['street_address'] . " " . $_GET['city'] . " " . $_GET['zip_code'];
 
-//$productID = $_SESSION['productID'];
-$productID = 10;
+$productID = $_SESSION['productID'];
+
+include("../connection.php");
 
 $sql_query = "SELECT TPclientID FROM Ticket_Products WHERE productID = " . $productID;
 $response = @mysqli_query($db, $sql_query);
@@ -24,6 +24,9 @@ $sellerLocation = $row['streetAddress'] . " " . $row['city'] . " " . $row['zipCo
 mysqli_close($db);
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 

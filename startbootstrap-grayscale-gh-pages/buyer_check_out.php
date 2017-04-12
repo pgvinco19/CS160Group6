@@ -1,13 +1,17 @@
+<?php
+session_start();
+$productID = $_GET['productID'];
+$_SESSION['productID'] = $productID;
+echo $_SESSION['productID'];
+//var_dump($_SESSION);
+//var_dump($GLOBALS);
+session_write_close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-    <?php
-    //$productID = $_GET['productID'];
-    //echo $productID;
-    $productID = 10;
-    ?>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

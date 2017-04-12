@@ -113,9 +113,9 @@ header("Location: home.php");
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="login">
                                 <p></p>
-                                <form id="login" method = "GET" action = "login.php">
+                                <form id="login" method = "GET" action = "../login.php">
                                     <div class="form-group">
-                                        <input type="username" class="form-control" id="username" name = "username" required autocomplete="off" placeholder="Username">
+                                        <input type="text" class="form-control" id="username" name = "username" required autocomplete="off" placeholder="Username">
                                             <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
@@ -129,7 +129,7 @@ header("Location: home.php");
                             </div>
                             <div class="tab-pane fade in" id="signup">
                                 <p></p>
-                                <form id="signup" method = "GET" action = "signUp.php">
+                                <form id="signup" method = "GET" action="../signUp.php">
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
@@ -175,11 +175,11 @@ header("Location: home.php");
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="username" class="form-control" id="creditcard" name = "creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
+                                        <input type="text" class="form-control" id="creditcard" name = "creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input type="username" class="form-control" id="street" name = "street" required autocomplete="off" placeholder="Street Address">
+                                        <input type="text" class="form-control" id="street" name = "street" required autocomplete="off" placeholder="Street Address">
                                             <p class="help-block text-danger"></p>
                                     </div>
 
@@ -276,9 +276,7 @@ header("Location: home.php");
                     <h2>Buyer</h2>
                     <form id="search">
                         <div class="form-group">
-                            <input type="search" class="form-control" id="search" autocomplete="off" placeholder="Search for Tickets">
-                                </div>
-                            <a href="buyer_search.html" type="submit" class="btn btn-default btn-lg">Search for Tickets</a>
+                            <a href="buyer_search.php" type="submit" class="btn btn-default btn-lg">Search for Tickets</a>
                     </form>
 
 
