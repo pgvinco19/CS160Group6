@@ -21,7 +21,6 @@ $response = @mysqli_query($db, $sql_query);
 $row = mysqli_fetch_array($response);
 
 $sellerLocation = $row['streetAddress'] . " " . $row['city'] . " " . $row['zipCode'];
-echo $sellerLocation;
 
 mysqli_close($db);
 
@@ -102,15 +101,6 @@ mysqli_close($db);
 
 
 <section id="transaction_summary" class="container content-section">
-    <h2 class="text-center">Transaction Summary</h2>
-    <h5 class="text-center">Order Details</h5>
-    Buyer information, ticket information, etc goes here
-    <br>
-    Still need to work on formatting
-    <br>
-    <br>
-    <br>
-    <br>
     <h5 class="text-center">Delivery Information</h5>
     <!-- Map Section -->
     <div id="map" style="width: 600px; float: left"></div>
@@ -144,8 +134,8 @@ mysqli_close($db);
                                       directionsDisplay.setPanel(document.getElementById('panel'));
                                       
                                       var request = {
-                                          origin: 'San Jose, CA',
-                                          destination: 'Palo Alto, CA',
+                                          origin: "<?php echo $sellerLocation?>",
+                                          destination: "<?php echo $buyerLocation?>",
                                           travelMode: 'DRIVING',
                                       };
     
