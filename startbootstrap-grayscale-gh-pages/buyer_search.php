@@ -147,7 +147,7 @@ $response = mysqli_query($db, $sql);
         <?php
             while($row = mysqli_fetch_array($response)){
                 ?>
-        <tr>
+        <tr style="color:black;">
             <td><?=$row['productID']?></td>
             <td><?=$row['eventName']?></td>
             <td><?=$row['eventDescription'].$row['eventCategory']?></td>
