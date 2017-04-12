@@ -202,7 +202,7 @@
     </div>
 
 
-    <form class="form" action="PUT YOU PHP FILENAME" method="GET">
+    <form class="form" action="buyer_delivery.php" method="GET">
 
         <h3 class="text-center">Delivery Info</h3>
 

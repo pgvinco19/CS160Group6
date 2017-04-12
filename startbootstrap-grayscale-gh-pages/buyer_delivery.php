@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+
+include("../connection.php");
+
+$buyerLocation = $_GET['street_address'] . " " . $_GET['city'] . " " . $_GET['state_initial'] . " " . $_GET['zip_code'];
+echo $buyerLocation;
+
+//$productID = $_SESSION['productID'];
+$productID = 10;
+//SQL Query
+$sql_query = "SELECT TPclientID FROM Ticket_Products WHERE productID = " . $productID;
+
+
+$response = @mysqli_query($db, $sql_query);
+$row = mysqli_fetch_array($response);
+
+$clientID = $row['TPclientID'];
+
+$sql_query = "SELECT streetAddress, city, zipCode FROM User WHERE clientID = " . $clientID;
+$response = @mysqli_query($db, $sql_query);
+$row = mysqli_fetch_array($response);
+
+$sellerLocation = $row['streetAddress'] . " " . $row['city'] . " " . $row['zipCode'];
+echo $sellerLocation;
+
+
+mysqli_close($db);
+
+?>
+
 <head>
 
     <meta charset="utf-8">
