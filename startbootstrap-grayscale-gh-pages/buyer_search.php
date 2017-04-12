@@ -82,18 +82,18 @@
 
 
 <section id="transaction_summary" class="container content-section">
-<input type = "text" name="search" style="position:absolute; TOP:120px; LEFT:150px; WIDTH:210px; HEIGHT:30px;" placeholder="Search Tickets">
+<input type = "text" name="search" style="display: none; position:absolute; TOP:120px; LEFT:150px; WIDTH:210px; HEIGHT:30px;" placeholder="Search Tickets">
    <!--  <h2 class="text-center">Search Page Placeholder</h2> -->
 
 </section>
 
  
-<a href="buyer_check_out.html"><img src="img/shoppingcart2.png" style="position:absolute; TOP:90px; RIGHT:170px; " width="70" height="70">
-
-</a>
+<img src="img/shoppingcart2.png" style="position:absolute; TOP:90px; RIGHT:170px; " width="70" height="70">
 
 
-<div class = "container_dropdown" style="position:absolute; TOP:120px; LEFT:400px;" >
+
+
+<div class = "container_dropdown" style="display: none; position:absolute; TOP:120px; LEFT:400px;" >
 <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Categories
     <span class="caret"></span></button>
@@ -113,7 +113,7 @@
 
 <?php
 
-include('../connection.php');
+include('connection.php');
 
 $sql = "SELECT productID, eventName, eventDescription, eventCategory, ticketPrice, eventLocation, eventDate FROM Ticket_Products";
 
@@ -147,7 +147,7 @@ $response = mysqli_query($db, $sql);
         <?php
             while($row = mysqli_fetch_array($response)){
                 ?>
-        <tr>
+        <tr style="color:black;">
             <td><?=$row['productID']?></td>
             <td><?=$row['eventName']?></td>
             <td><?=$row['eventDescription'].$row['eventCategory']?></td>
