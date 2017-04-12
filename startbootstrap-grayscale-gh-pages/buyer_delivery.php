@@ -5,8 +5,7 @@
 
 include("../connection.php");
 
-$buyerLocation = $_GET['street_address'] . " " . $_GET['city'] . " " . $_GET['state_initial'] . " " . $_GET['zip_code'];
-echo $buyerLocation;
+$buyerLocation = $_GET['street_address'] . " " . $_GET['city'] . " " . $_GET['zip_code'];
 
 //$productID = $_SESSION['productID'];
 $productID = 10;
@@ -101,7 +100,9 @@ mysqli_close($db);
 
 
 <section id="transaction_summary" class="container content-section">
-    <h5 class="text-center">Delivery Information</h5>
+    <h2 class="text-center">Transaction Complete</h2>
+
+    <h5 class="text-center">Your order has been placed. Delivery information is displayed below.</h5>
     <!-- Map Section -->
     <div id="map" style="width: 600px; float: left"></div>
     <div id="panel" style="width: 500px; float: right;"></div>

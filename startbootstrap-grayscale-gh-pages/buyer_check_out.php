@@ -4,8 +4,9 @@
 <head>
 
     <?php
-    $productID = $_GET['productID'];
-    echo $productID;
+    //$productID = $_GET['productID'];
+    //echo $productID;
+    $productID = 10;
     ?>
 
     <meta charset="utf-8">
@@ -206,7 +207,6 @@
         <h5 id="totalCost" class='total'>Total</h5><h1>$ ##.##</h1>
     </div>
 
-
     <form class="form" action="buyer_delivery.php" method="GET">
 
         <h3 class="text-center">Delivery Info</h3>
@@ -214,24 +214,24 @@
         <div class="form-group">
             <div class="col-sm-6">
                 <label for="first-name">First Name</label>
-                <input class="form-control" id="first-name" type="text" placeholder="Enter First Name" required>
+                <input class="form-control" name="first-name" id="first-name" type="text" placeholder="Enter First Name" required>
             </div>
 
             <div class="col-sm-6">
                 <label for="last-name">Last Name</label>
-                <input class="form-control" id="last-name" type="text" placeholder="Enter Last Name" required>
+                <input class="form-control" name="last-name" id="last-name" type="text" placeholder="Enter Last Name" required>
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-sm-6">
                 <label for="street_address">Street Address:</label>
-                <input class="form-control" id="street_address" type="text" placeholder="Enter Street Address" required>
+                <input class="form-control" name="street_address" id="street_address" type="text" placeholder="Enter Street Address" required>
             </div>
 
             <div class="col-sm-6">
                 <label for="city">City:</label>
-                <input class="form-control" id="city" type="text" placeholder="Enter City" required>
+                <input class="form-control" name="city" id="city" type="text" placeholder="Enter City" required>
             </div>
         </div>
 
@@ -295,7 +295,7 @@
 
             <div class="col-sm-6">
                 <label for="zip_code">Zip Code:</label>
-                <input class="form-control" id="zip_code" type="text" placeholder="Enter Zip Code" pattern="[0-9]{5}" required>
+                <input class="form-control" name="zip_code" id="zip_code" type="text" placeholder="Enter Zip Code" pattern="[0-9]{5}" required>
             </div>
         </div>
 
@@ -304,12 +304,12 @@
         <div class="form-group">
             <div class="col-sm-6">
                 <label for="first-name-billing">First Name</label>
-                <input class="form-control" id="first-name-billing" type="text" placeholder="Enter First Name" required>
+                <input class="form-control" name="first-name-billing" id="first-name-billing" type="text" placeholder="Enter First Name" required>
             </div>
 
             <div class="col-sm-6">
                 <label for="last-name-billing">Last Name</label>
-                <input class="form-control" id="last-name-billing" type="text" placeholder="Enter Last Name" required>
+                <input class="form-control" name="last-name-billing" id="last-name-billing" type="text" placeholder="Enter Last Name" required>
             </div>
         </div>
 
@@ -323,7 +323,7 @@
             <div class="col-sm-3">
                 <label class="control-label" for="expire-month">Expire Month:</label>
                 <div>
-                    <select class="form-control" id="expire-month">
+                    <select class="form-control" name="expire-month" id="expire-month">
                         <option>Jan</option>
                         <option>Feb</option>
                         <option>Mar</option>
@@ -344,7 +344,7 @@
             <div class="col-sm-3">
                 <label class="control-label" for="expire-year">Expire Year:</label>
                 <div>
-                    <select class="form-control" id="expire-year">
+                    <select class="form-control" name="expire-year" id="expire-year">
                         <script>
                             var myDate = new Date();
                             var year = myDate.getFullYear();
