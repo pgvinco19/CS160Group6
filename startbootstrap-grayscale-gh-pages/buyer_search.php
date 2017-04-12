@@ -113,7 +113,7 @@
 
 <?php
 
-include('connection.php');
+include('../connection.php');
 
 $sql = "SELECT productID, eventName, eventDescription, eventCategory, ticketPrice, eventLocation, eventDate FROM Ticket_Products";
 
@@ -145,8 +145,8 @@ $response = mysqli_query($db, $sql);
 
     <tbody>
         <?php
-        while($row = mysqli_fetch_array($response)){
-        ?>
+            while($row = mysqli_fetch_array($response)){
+                ?>
         <tr>
             <td><?=$row['productID']?></td>
             <td><?=$row['eventName']?></td>
@@ -167,19 +167,19 @@ $response = mysqli_query($db, $sql);
 <script>
     
 
-    $(document).ready(function() {
+    $(document).ready(function()
+    {
     var table = $('#scroll').DataTable();
      
     $('#scroll tbody').on('click', 'tr', function () {
         var IDdata = table.row( this ).data();
         var realID = IDdata[0];
-        alert( 'You clicked on '+IDdata[0]+'\'s row' );
-    
-$.post("buyer_check_out.php", {phpVar: realID});
+        //alert( 'You clicked on '+IDdata[0]+'\'s row' );
 
+    location.href = "buyer_check_out.php?productID="+realID;
 
-    } );
-} );
+    });
+    });
 </script>
 
 

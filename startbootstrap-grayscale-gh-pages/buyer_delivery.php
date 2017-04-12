@@ -10,13 +10,10 @@ echo $buyerLocation;
 
 //$productID = $_SESSION['productID'];
 $productID = 10;
-//SQL Query
+
 $sql_query = "SELECT TPclientID FROM Ticket_Products WHERE productID = " . $productID;
-
-
 $response = @mysqli_query($db, $sql_query);
 $row = mysqli_fetch_array($response);
-
 $clientID = $row['TPclientID'];
 
 $sql_query = "SELECT streetAddress, city, zipCode FROM User WHERE clientID = " . $clientID;
@@ -25,7 +22,6 @@ $row = mysqli_fetch_array($response);
 
 $sellerLocation = $row['streetAddress'] . " " . $row['city'] . " " . $row['zipCode'];
 echo $sellerLocation;
-
 
 mysqli_close($db);
 
