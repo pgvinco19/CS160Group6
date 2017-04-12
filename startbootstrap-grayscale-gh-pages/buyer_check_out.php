@@ -199,12 +199,35 @@ session_write_close();
 <section id="edit_product" class="container content-section">
     <h2 class="text-center">Checkout</h2>
 
+    <?php
+
+    include("../connection.php");
+
+    $sql_query = "SELECT eventName, eventDate, eventLocation, ticketPrice, eventCategory FROM Ticket_Products WHERE productID = " . $productID;
+    $response = @mysqli_query($db, $sql_query);
+    $row = mysqli_fetch_array($response);
+
+    $eventName = $row['eventName'];
+    $eventDate = $row['eventDate'];
+    $eventLocation = $row['eventLocation'];
+    $ticketPrice = $row['ticketPrice'];
+    $eventCategory = $row['eventCategory'];
+
+    mysqli_close($db);
+    ?>
 
     <div id="order-list" class='order'>
         <h3 class="text-center">Orders</h3>
 
         <ul id='items-order-list' class='order-list'>
-            <li><h4>Place Holder</h4><h5>$ ##.##</h5></li>
+            <li>
+                <h4><?php echo $eventName ?></h4>
+                <h5><?php echo $eventDate ?></h5>
+                <h5><?php echo $eventLocation ?></h5>
+                <h5><?php echo $eventCategory ?></h5>
+                <h5><?php echo $ticketPrice ?></h5>
+                <h5><?php echo $eventName ?></h5>
+            </li>
         </ul>
 
         <h5 id="serviceFeeCost">Service Fee</h5><h4>$ ##.##</h4>

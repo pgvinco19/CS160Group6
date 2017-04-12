@@ -1,4 +1,6 @@
-<?php
+<?php session_start();
+
+$TPclientID = $_SESSION['clientID'];
 
 include("connection.php");
 
@@ -7,8 +9,6 @@ if ($db->connect_error)
 {
     die("Connection failed: " . $db->connect_error);
 }
-
-$TPclientID = 231; # PLACEHOLDER ------------------------------------------------------------------------
 
 $numberOfTickets = $_GET['num_items'];
 $eventName = $_GET['eventName'];
