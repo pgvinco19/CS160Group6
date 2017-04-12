@@ -1,8 +1,8 @@
 <?php
-include("php/connection.php");
+include("connection.php");
 
 //Getting tickets listing from certain seller
-$sql = "SELECT eventName, eventDate, eventLocation, numberOfTickets FROM `Ticket Products` WHERE TPclientID='231'";
+$sql = "SELECT eventName, eventDate, eventLocation, numberOfTickets FROM `Ticket_Products` WHERE TPclientID='231'";
 $response = $db->query($sql);
 
 if ($response->num_rows > 0)  {
