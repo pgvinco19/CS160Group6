@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d99737-aa49-4531-a6c2-9315863cc35f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/index.html" afterPath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.html" afterPath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.php" afterPath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.php" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="seller_main_page.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="196" column="73" lean-forward="true" selection-start-line="196" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+            <state relative-caret-position="410">
+              <caret line="192" column="80" lean-forward="false" selection-start-line="192" selection-start-column="72" selection-end-line="192" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -30,8 +29,8 @@
       <file leaf-file-name="seller_main_page.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="227" selection-end-column="18" />
+            <state relative-caret-position="15">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="109" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -40,8 +39,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="160" column="68" lean-forward="true" selection-start-line="160" selection-start-column="68" selection-end-line="160" selection-end-column="68" />
+            <state relative-caret-position="284">
+              <caret line="167" column="173" lean-forward="false" selection-start-line="167" selection-start-column="173" selection-end-line="167" selection-end-column="173" />
               <folding />
             </state>
           </provider>
@@ -50,7 +49,7 @@
       <file leaf-file-name="buyer_check_out.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_check_out.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
+            <state relative-caret-position="1139">
               <caret line="355" column="0" lean-forward="false" selection-start-line="355" selection-start-column="0" selection-end-line="360" selection-end-column="14" />
               <folding />
             </state>
@@ -71,9 +70,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/sellerMainDisplayTickets.php" />
-        <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/index.html" />
         <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.html" />
         <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.php" />
+        <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/index.html" />
       </list>
     </option>
   </component>
@@ -231,12 +230,12 @@
       <option name="presentableId" value="Default" />
       <updated>1491962444492</updated>
       <workItem from="1491962448111" duration="151000" />
-      <workItem from="1491962600369" duration="3024000" />
+      <workItem from="1491962600369" duration="4051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3175000" />
+    <option name="totallyTimeSpent" value="4202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="735" extended-state="0" />
@@ -305,7 +304,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_check_out.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
+        <state relative-caret-position="1139">
           <caret line="355" column="0" lean-forward="false" selection-start-line="355" selection-start-column="0" selection-end-line="360" selection-end-column="14" />
           <folding />
         </state>
@@ -313,24 +312,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="227" selection-end-column="18" />
+        <state relative-caret-position="15">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="109" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="196" column="73" lean-forward="true" selection-start-line="196" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+        <state relative-caret-position="410">
+          <caret line="192" column="80" lean-forward="false" selection-start-line="192" selection-start-column="72" selection-end-line="192" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="160" column="68" lean-forward="true" selection-start-line="160" selection-start-column="68" selection-end-line="160" selection-end-column="68" />
+        <state relative-caret-position="284">
+          <caret line="167" column="173" lean-forward="false" selection-start-line="167" selection-start-column="173" selection-end-line="167" selection-end-column="173" />
           <folding />
         </state>
       </provider>
