@@ -1,4 +1,17 @@
+<?php
+//include('login.php'); // Include Login Script
+/*** begin our session ***/
+session_start();
+
+
+if ((isset($_SESSION['username']) != '')) 
+{
+header("Location: home.php");
+}
+?>
 <!DOCTYPE html>
+
+
 <html lang="en">
 
 <head>
@@ -100,50 +113,47 @@
                         <div class="tab-content">
                             <div class="tab-pane fade active in" id="login">
                                 <p></p>
-                                <form id="login">
+                                <form id="login" method = "GET" action = "login.php">
                                     <div class="form-group">
-                                        <input type="username" class="form-control" id="username" required autocomplete="off" placeholder="Username">
+                                        <input type="username" class="form-control" id="username" name = "username" required autocomplete="off" placeholder="Username">
                                             <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" id="password" required autocomplete="off" placeholder="Password">
+                                        <input type="password" class="form-control" id="password" name = "password" required autocomplete="off" placeholder="Password">
                                             <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="mrgn-30-top">
-                                        <button type="submit" class="btn btn-default btn-lg">Log In</button>
+                                        <button type="submit" name = "submit" class="btn btn-default btn-lg">Log In</button>
                                     </div>
                                 </form>
                             </div>
                             <div class="tab-pane fade in" id="signup">
                                 <p></p>
-                                <form id="signup">
+                                <form id="signup" method = "GET" action = "signUp.php">
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="first_name" required autocomplete="off" placeholder="First Name">
+                                                <input type="text" class="form-control" id="first_name" name ="first_name" required autocomplete="off" placeholder="First Name">
                                                     <p class="help-block text-danger"></p>
                                                     </div>
                                         </div>
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="last_name" required autocomplete="off" placeholder="Last Name">
+                                                <input type="text" class="form-control" id="last_name" name = "last_name" required autocomplete="off" placeholder="Last Name">
                                                     <p class="help-block text-danger"></p>
                                                     </div>
                                         </div>
                                     </div>
-
-
-
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="email" required autocomplete="off" placeholder="Email">
+                                                <input type="text" class="form-control" id="email" name = "email" required autocomplete="off" placeholder="Email">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="phone" required autocomplete="off" placeholder="Phone">
+                                                <input type="text" class="form-control" id="phone" name = "phone" required autocomplete="off" placeholder="Phone">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                         </div>
@@ -153,30 +163,30 @@
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="username" required autocomplete="off" placeholder="Username">
+                                                <input type="text" class="form-control" id="username" name = "username" required autocomplete="off" placeholder="Username">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                         </div>
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="password" required autocomplete="off" placeholder="Password">
+                                                <input type="text" class="form-control" id="password"  name = "password" required autocomplete="off" placeholder="Password">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="username" class="form-control" id="creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
+                                        <input type="username" class="form-control" id="creditcard" name = "creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="form-group">
-                                        <input type="username" class="form-control" id="street" required autocomplete="off" placeholder="Street Address">
+                                        <input type="username" class="form-control" id="street" name = "street" required autocomplete="off" placeholder="Street Address">
                                             <p class="help-block text-danger"></p>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="city" required autocomplete="off" placeholder="City">
+                                                <input type="text" class="form-control" id="city" name = "city" required autocomplete="off" placeholder="City">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                         </div>
@@ -239,15 +249,14 @@
                                         </div>
                                         <div class="col-xs-12 col-sm-3">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="zip" required autocomplete="off" placeholder="Zip Code">
+                                                <input type="text" class="form-control" id="zip" name = "zip" required autocomplete="off" placeholder="Zip Code">
                                                 <p class="help-block text-danger"></p>
                                             </div>
                                         </div>
                                     </div>
 
-
                                     <div class="mrgn-30-top">
-                                        <button type="submit" class="btn btn-default btn-lg">Sign Up</button>
+                                        <button type="submit" name = "submit" class="btn btn-default btn-lg">Sign Up</button>
                                     </div>
                                 </form>
                             </div>
@@ -265,7 +274,14 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>Buyer</h2>
+                    <form id="search">
+                        <div class="form-group">
+                            <input type="search" class="form-control" id="search" autocomplete="off" placeholder="Search for Tickets">
+                                </div>
                             <a href="buyer_search.html" type="submit" class="btn btn-default btn-lg">Search for Tickets</a>
+                    </form>
+
+
                 </div>
             </div>
         </div>
