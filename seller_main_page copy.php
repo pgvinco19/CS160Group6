@@ -12,15 +12,15 @@
     <title>ETES - Electronic Ticket Exchange System</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="startbootstrap-grayscale-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="startbootstrap-grayscale-gh-pages/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
     <!-- Theme CSS -->
-    <link href="css/grayscale.min.css" rel="stylesheet">
+    <link href="startbootstrap-grayscale-gh-pages/css/grayscale.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -120,7 +120,7 @@ button {
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="index.html">
+            <a class="navbar-brand page-scroll" href="startbootstrap-grayscale-gh-pages/index.html">
                 <i class="fa fa-play-circle"></i> <span class="light">Ticket</span>Home
             </a>
         </div>
@@ -133,13 +133,13 @@ button {
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#seller">Seller</a>
+                    <a class="page-scroll" href="startbootstrap-grayscale-gh-pages/index.html#seller">Seller</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#buyer">Buyer</a>
+                    <a class="page-scroll" href="startbootstrap-grayscale-gh-pages/index.html#buyer">Buyer</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#contact">Contact</a>
+                    <a class="page-scroll" href="startbootstrap-grayscale-gh-pages/index.html#contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -167,7 +167,7 @@ function toggle_visibility(id) {
 </script>
             <div class="button_section">
                 <div style ='float: left' class = "button_1">
-                    <a href="seller_add_modify_item.html" type="submit" class="btn btn-default">Add Product</a>
+                    <a href="startbootstrap-grayscale-gh-pages/seller_add_modify_item.html" type="submit" class="btn btn-default">Add Product</a>
                 </div>
                    <div style ='float: right' class = "button_2" >
                     <a href="#editProfile" onclick="toggle_visibility('editProfile')" type="submit" class="btn btn-default"> Edit Profile</a>
@@ -247,16 +247,16 @@ function toggle_visibility(id) {
 </footer>
 
 <!-- jQuery -->
-<script src="vendor/jquery/jquery.js"></script>
+<script src="startbootstrap-grayscale-gh-pages/vendor/jquery/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="startbootstrap-grayscale-gh-pages/vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 <!-- Theme JavaScript -->
-<script src="js/grayscale.min.js"></script>
+<script src="startbootstrap-grayscale-gh-pages/js/grayscale.min.js"></script>
 
 </body>
 </html>
