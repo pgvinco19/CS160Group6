@@ -54,33 +54,13 @@
         form {
             /* Just to center the form on the page */
             margin-top:  10px;
-            width: 400px;
+            width: 500px;
             /* To see the outline of the form */
-            padding-left: 90px
-            padding-top: 100px;
+            padding-left: 200px
+            padding-top: 200px;
             border: 1px solid #CCC;
             text-align: left;
 
-        }
-        form div + div {
-            margin-top: 1em;
-        }
-
-        label {
-            /* To make sure that all labels have the same size and are properly aligned */
-            display: inline-block;
-            width: 90px;
-            text-align: right;
-        }
-
-        input, textarea {
-
-            /* To give the same size to all text fields */
-            width: 300px;
-            box-sizing: border-box;
-
-            /* To harmonize the look & feel of text field border */
-            border: 1px solid #999;
         }
 
         input:focus, textarea:focus {
@@ -88,24 +68,7 @@
             border-color: #000;
         }
 
-        textarea {
-            /* To properly align multiline text fields with their labels */
-            vertical-align: top;
 
-            /* To give enough room to type some text */
-            height: 5em;
-        }
-
-        .button {
-            /* To position the buttons to the same position of the text fields */
-            padding-left: 90px; /* same size as the label elements */
-        }
-
-        button {
-            /* This extra margin represent roughly the same space as the space
-               between the labels and their text fields */
-            margin-left: .5em;
-        }
         #editProfile{display:none;}
     </style>
 
@@ -187,55 +150,143 @@
                 ?>
     </div>
 
+    <p></p>
 
     <div id='editProfile'; align = "center"; display="none">
+        <h3 align="center">Update Profile</h3>
         <form action="/my-handling-form-page" method="post">
-            <div>
-                <label for="name">First Name:</label>
-                <input type="text" id="name" name="user_name" placeholder="first name">
-            </div>
-            <div>
-                <label for="name">Last Name:</label>
-                <input type="text" id="name" name="user_name" placeholder="last name">
-            </div>
-            <div>
-                <label for="credit">Credit Card No:</label>
-                <input type="credit" id="credit" name="credit" placeholder="credit card number">
-            </div>
-            <div>
-                <label for="Address">Address Line 1:</label>
-                <input id="address-line1" name="address-line1" type="text" placeholder="Street address, P.O. box, company name, c/o">
-            </div>
-            <div>
-                <label for="Address2">Address Line 2:</label>
-                <input id="address-line2" name="address-line2" type="text" placeholder="Apartment, suite , unit, building, floor, etc.">
-            </div>
-            <div>
-                <label for="City">City:</label>
-                <input id="city" name="city" type="text" placeholder="city">
-            </div>
-            <div>
-                <label for="region">State:</label>
-                <input id="region" name="region" type="text" placeholder="state / province / region">
-            </div>
-            <div>
-                <label for="zip">Zip Code:</label>
-                <input id="zip" name="zip" type="text" placeholder="zip code">
-            </div>
-            <div>
-                <label for ="country"> Country: </label>
-                <input id = "country" name = "country" type= "text" placeholder="country">
-            </div>
+            <form id="signup">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="first_name" required autocomplete="off" placeholder="First Name">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="last_name" required autocomplete="off" placeholder="Last Name">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="email" required autocomplete="off" placeholder="Email">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="phone" required autocomplete="off" placeholder="Phone">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
 
 
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" required autocomplete="off" placeholder="Username" disabled>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="password" required autocomplete="off" placeholder="Password">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="username" class="form-control" id="creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
+                    <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                    <input type="username" class="form-control" id="street" required autocomplete="off" placeholder="Street Address">
+                    <p class="help-block text-danger"></p>
+                </div>
 
-            <div class="button">
-                <button type="submit" class="btn btn-default">Update</button>
-            </div>
-        </form>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="city" required autocomplete="off" placeholder="City">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <select class="form-control" name="state_initial_delivery" id="state_initial_delivery">
+                            <option selected disabled>State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="zip" required autocomplete="off" placeholder="Zip Code">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12" align="center">
+                        <button id="submit-data" type="submit" class="btn btn-default">Submit</button>
+                        <button id="reset-data" type="reset" class="btn btn-default">Reset</button>
+                    </div>
+                </div>
+            </form>
     </div>
-
-
 </section>
 
 
