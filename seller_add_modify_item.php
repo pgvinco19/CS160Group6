@@ -20,7 +20,7 @@ $eventCategory = $_GET['category'];
 
 
 //SQL Query
-$sql_query = "INSERT INTO `Ticket Products` (TPclientID, numberOfTickets, eventName, eventDate, 
+$sql_query = "INSERT INTO Ticket_Products (TPclientID, numberOfTickets, eventName, eventDate, 
 eventLocation, ticketPrice, eventDescription, eventCategory) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = mysqli_prepare($db, $sql_query);
@@ -42,7 +42,7 @@ if($affected_rows != 1)
 mysqli_stmt_close($stmt);
 mysqli_close($db);
 
-header('Location: startbootstrap-grayscale-gh-pages/seller_main_page.html');
+header('Location: startbootstrap-grayscale-gh-pages/seller_main_page.php');
 exit;
 
 ?>
