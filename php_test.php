@@ -12,6 +12,7 @@ Your email address is: <?php echo $_REQUEST["email"]; ?><br>
 
 <?php
 
+
     include("connection.php");
 
     // Check connection

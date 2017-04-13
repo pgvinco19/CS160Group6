@@ -86,13 +86,13 @@ mysqli_close($db);
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#seller">Seller</a>
+                    <a class="page-scroll" href="index.php">Seller</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#buyer">Buyer</a>
+                    <a class="page-scroll" href="index.php">Buyer</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#contact">Contact</a>
+                    <a class="page-scroll" href="index.php">Contact</a>
                 </li>
             </ul>
         </div>

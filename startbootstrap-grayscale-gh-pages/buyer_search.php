@@ -39,8 +39,6 @@
 <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
 
 
-
-
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -65,13 +63,13 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#seller">Seller</a>
+                    <a class="page-scroll" href="index.php">Seller</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#buyer">Buyer</a>
+                    <a class="page-scroll" href="index.php">Buyer</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#contact">Contact</a>
+                    <a class="page-scroll" href="index.php">Contact</a>
                 </li>
             </ul>
         </div>
@@ -113,7 +111,7 @@
 
 <?php
 
-include('connection.php');
+include('../connection.php');
 
 $sql = "SELECT productID, eventName, eventDescription, eventCategory, ticketPrice, eventLocation, eventDate FROM Ticket_Products";
 
