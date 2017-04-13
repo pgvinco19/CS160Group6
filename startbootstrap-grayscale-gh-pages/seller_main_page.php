@@ -100,13 +100,13 @@ $TPclientID = $_SESSION['clientID'];
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#seller">Seller</a>
+                    <a class="page-scroll" href="index.php#seller">Seller</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#buyer">Buyer</a>
+                    <a class="page-scroll" href="index.php#buyer">Buyer</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#contact">Contact</a>
+                    <a class="page-scroll" href="index.php#contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -147,6 +147,7 @@ $TPclientID = $_SESSION['clientID'];
 <section id="sellerMain">
 
     <div class="container" style="overflow-x:auto;">
+        <h5 align="center">Available Tickets On Your Account</h5>
         <?php
         include("../connection.php");
 
@@ -162,7 +163,9 @@ $TPclientID = $_SESSION['clientID'];
             }
             echo "</table>";
         } else {
-            echo "0 results";
+            echo "<table><tr><th>Event Name</th><th>Date</th><th>Location</th><th>Quantity</th></tr>";
+            echo "<tr><td>No available tickets found.</td><td></td><td></td><td></td><tr>";
+            echo "</table>";
         }
         mysqli_close($db);
         ?>

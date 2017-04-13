@@ -29,5 +29,7 @@ if(isset($_GET["submit"])){
 				$error = "Incorrect username or password"; 
 			}
 		}
+header('Location: startbootstrap-grayscale-gh-pages/seller_main_page.php');
+exit;
 
 ?>
