@@ -1,7 +1,6 @@
 <?php session_start();
 
 $TPclientID = $_SESSION['clientID'];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -173,66 +172,64 @@ $TPclientID = $_SESSION['clientID'];
 
     <div id='editProfile'; align = "center"; display="none">
         <h3 align="center">Update Profile</h3>
-        <form action="/my-handling-form-page" method="post">
-            <form id="signup">
+            <form class="form" action="editProfile.php" method="GET">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="first_name" required autocomplete="off" placeholder="First Name">
+                            <input type="text" class="form-control" name='first_name' id="first_name" required autocomplete="off" placeholder="First Name">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="last_name" required autocomplete="off" placeholder="Last Name">
+                            <input type="text" class="form-control" name="last_name" id="last_name" required autocomplete="off" placeholder="Last Name">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" id="email" required autocomplete="off" placeholder="Email">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="phone" id="phone" required autocomplete="off" placeholder="Phone">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="email" required autocomplete="off" placeholder="Email">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="phone" required autocomplete="off" placeholder="Phone">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                </div>
-
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="username" required autocomplete="off" placeholder="Username" disabled>
+                            <input type="text" class="form-control" name="username id="username" required autocomplete="off" placeholder="Username: Cannot be changed" disabled>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="password" required autocomplete="off" placeholder="Password">
+                            <input type="text" class="form-control" name="password" id="password" required autocomplete="off" placeholder="Password">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="username" class="form-control" id="creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
+                    <input type="username" class="form-control" name="creditcard" id="creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
                     <p class="help-block text-danger"></p>
                 </div>
                 <div class="form-group">
-                    <input type="username" class="form-control" id="street" required autocomplete="off" placeholder="Street Address">
+                    <input type="username" class="form-control" name="street" id="street" required autocomplete="off" placeholder="Street Address">
                     <p class="help-block text-danger"></p>
                 </div>
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="city" required autocomplete="off" placeholder="City">
+                            <input type="text" class="form-control" name="city" id="city" required autocomplete="off" placeholder="City">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -295,7 +292,7 @@ $TPclientID = $_SESSION['clientID'];
                     </div>
                     <div class="col-xs-12 col-sm-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="zip" required autocomplete="off" placeholder="Zip Code">
+                            <input type="text" class="form-control" name="zip" id="zip" required autocomplete="off" placeholder="Zip Code">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -303,7 +300,6 @@ $TPclientID = $_SESSION['clientID'];
                         <button id="submit-data" type="submit" class="btn btn-default">Submit</button>
                         <button id="reset-data" type="reset" class="btn btn-default">Reset</button>
                     </div>
-                </div>
             </form>
     </div>
 </section>
