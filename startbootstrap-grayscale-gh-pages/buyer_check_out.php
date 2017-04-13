@@ -44,7 +44,7 @@ session_write_close();
         h3, h4, h5, h6
         {
             margin: 0;
-            line-height: 1.4;
+            line-height: 2;
         }
 
         h3
@@ -90,68 +90,12 @@ session_write_close();
             letter-spacing: 0;
             text-align: left;
             text-transform: uppercase;
-            line-height: 1.8;
+            line-height: 2;
         }
 
         h6 > span
         {
             margin-left: 64px;
-        }
-
-        /*--------------------
-        Checkout
-        ---------------------*/
-
-        ul.order-list {
-            width: 100%;
-            height: 205px;
-            list-style: none;
-            overflow-y: scroll;
-            padding-right: 12px;
-        }
-
-        ul.order-list li {
-            height: 60px;
-            margin-left: -40px;
-            overflow: hidden;
-            border-bottom: 1px solid #e9ebf2;
-        }
-
-        ul.order-list li > img {
-            width: 60px;
-            height: 60px;
-        }
-
-        ul.order-list li > h4 {
-            margin-top: 16px;
-            line-height: 1;
-            letter-spacing: 1px;
-            text-align: right;
-
-            -webkit-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            -o-transition: all 0.3s;
-            transition: all 0.3s;
-        }
-
-        ul.order-list li:hover > h4 {
-            margin-top: 8px;
-        }
-
-        ul.order-list li > h5 {
-            margin-top: 0;
-            text-align: right;
-            display: none;
-
-            -webkit-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            -o-transition: all 0.3s;
-            transition: all 0.3s;
-        }
-
-        ul.order-list li:hover > h5 {
-            margin-top: 3px;
-            display: block;
         }
 
     </style>
@@ -180,13 +124,13 @@ session_write_close();
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#seller">Seller</a>
+                    <a class="page-scroll" href="index.php">Seller</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#buyer">Buyer</a>
+                    <a class="page-scroll" href="index.php">Buyer</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.html#contact">Contact</a>
+                    <a class="page-scroll" href="index.php">Contact</a>
                 </li>
             </ul>
         </div>
@@ -219,19 +163,14 @@ session_write_close();
     <div id="order-list" class='order'>
         <h3 class="text-center">Orders</h3>
 
-        <ul id='items-order-list' class='order-list'>
-            <li>
-                <h4><?php echo $eventName ?></h4>
-                <h5><?php echo $eventDate ?></h5>
-                <h5><?php echo $eventLocation ?></h5>
-                <h5><?php echo $eventCategory ?></h5>
-                <h5><?php echo $ticketPrice ?></h5>
-                <h5><?php echo $eventName ?></h5>
-            </li>
-        </ul>
+        <h4>Event: <?php echo $eventName ?></h4>
+        <h4>Date: <?php echo $eventDate ?></h4>
+        <h4>Location: <?php echo $eventLocation ?></h4>
+        <h4>Category: <?php echo $eventCategory ?></h4>
 
-        <h5 id="serviceFeeCost">Service Fee</h5><h4>$ ##.##</h4>
-        <h5 id="totalCost" class='total'>Total</h5><h1>$ ##.##</h1>
+        <h5 id="serviceFeeCost">Original Cost</h5><h4>$ <?php echo $ticketPrice ?></h4>
+        <h5 id="serviceFeeCost">Service Fee</h5><h4>$ <?php echo $ticketPrice * .05 ?></h4>
+        <h5 id="totalCost" class='total'>Total</h5><h1><?php echo $ticketPrice + ($ticketPrice * .05) ?></h1>
     </div>
 
     <form class="form" action="buyer_delivery.php" method="GET">
