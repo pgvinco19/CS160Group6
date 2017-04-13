@@ -48,6 +48,6 @@ if(isset($_GET["submit"])){
 
 
 }
-header('Location: startbootstrap-grayscale-gh-pages/seller_main_page.php');
+header('Location: startbootstrap-grayscale-gh-pages/index.php#seller');
 exit;
 ?>
