@@ -25,11 +25,11 @@ if(isset($_GET["submit"])){
 			if(mysqli_num_rows($result) == 1){
 				$cID = $row['clientID'];
 				$_SESSION['clientID'] = $cID;
+                header('Location: startbootstrap-grayscale-gh-pages/seller_main_page.php');
 			}else {
 				$error = "Incorrect username or password"; 
 			}
 		}
-header('Location: startbootstrap-grayscale-gh-pages/seller_main_page.php');
 exit;
 
 ?>

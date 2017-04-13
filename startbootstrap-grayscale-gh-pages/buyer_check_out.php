@@ -2,7 +2,7 @@
 session_start();
 $productID = $_GET['productID'];
 $_SESSION['productID'] = $productID;
-echo $_SESSION['productID'];
+//echo $_SESSION['productID'];
 //var_dump($_SESSION);
 //var_dump($GLOBALS);
 session_write_close();
@@ -124,13 +124,13 @@ session_write_close();
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php">Seller</a>
+                    <a class="page-scroll" href="index.php#seller">Seller</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php">Buyer</a>
+                    <a class="page-scroll" href="index.php#buyer">Buyer</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php">Contact</a>
+                    <a class="page-scroll" href="index.php#contact">Contact</a>
                 </li>
             </ul>
         </div>

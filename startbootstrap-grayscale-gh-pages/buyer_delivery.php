@@ -1,7 +1,7 @@
 <?php session_start();
 
 //var_dump($GLOBALS);
-var_dump($_SESSION);
+//var_dump($_SESSION);
 //echo $_SESSION['productID'];
 
 $buyerLocation = $_GET['street_address'] . " " . $_GET['city'] . " " . $_GET['zip_code'];
@@ -10,16 +10,42 @@ $productID = $_SESSION['productID'];
 
 include("../connection.php");
 
-$sql_query = "SELECT TPclientID FROM Ticket_Products WHERE productID = " . $productID;
+$sql_query = "SELECT TPclientID, numberOfTickets FROM Ticket_Products WHERE productID = " . $productID;
 $response = @mysqli_query($db, $sql_query);
 $row = mysqli_fetch_array($response);
 $clientID = $row['TPclientID'];
+$ticketQuantity = $row['numberOfTickets'];
 
 $sql_query = "SELECT streetAddress, city, zipCode FROM User WHERE clientID = " . $clientID;
 $response = @mysqli_query($db, $sql_query);
 $row = mysqli_fetch_array($response);
 
 $sellerLocation = $row['streetAddress'] . " " . $row['city'] . " " . $row['zipCode'];
+
+//Decrement number of tickets available
+if ($ticketQuantity > 0)
+{
+    $newTicketQuantity = --$ticketQuantity;
+    //SQL Query
+    $sql_query = "UPDATE Ticket_Products SET numberOfTickets = ? WHERE productID = " . $productID;
+    $stmt = mysqli_prepare($db, $sql_query);
+    //Bind the Variables to sql
+    mysqli_stmt_bind_param($stmt, "i", $newTicketQuantity);
+
+    //Execute Code
+    mysqli_stmt_execute($stmt);
+
+    //Delete from table if quantity is 0
+    if ($newTicketQuantity == 0)
+    {
+        //SQL Query
+        $sql_query = "DELETE from Ticket_Products WHERE productID = " . $productID;
+        $stmt = mysqli_prepare($db, $sql_query);
+
+        //Execute Code
+        mysqli_stmt_execute($stmt);
+    }
+}
 
 mysqli_close($db);
 
@@ -86,13 +112,13 @@ mysqli_close($db);
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php">Seller</a>
+                    <a class="page-scroll" href="index.php#seller">Seller</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php">Buyer</a>
+                    <a class="page-scroll" href="index.php#buyer">Buyer</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php">Contact</a>
+                    <a class="page-scroll" href="index.php#contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -153,6 +179,19 @@ mysqli_close($db);
 
 
 </section>
+
+<?php include("../connection.php");
+
+$sql_query = "SELECT numberOfTickets FROM Ticket_Products WHERE productID = " . $productID;
+$response = @mysqli_query($db, $sql_query);
+$row = mysqli_fetch_array($response);
+$ticketQuantity = $row['numberOfTickets'];
+
+
+
+mysqli_close($db);
+
+?>
 
 <script src="vendor/jquery/jquery.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>

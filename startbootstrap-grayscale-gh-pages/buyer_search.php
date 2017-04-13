@@ -63,13 +63,13 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php">Seller</a>
+                    <a class="page-scroll" href="index.php#seller">Seller</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php">Buyer</a>
+                    <a class="page-scroll" href="index.php#buyer">Buyer</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php">Contact</a>
+                    <a class="page-scroll" href="index.php#contact">Contact</a>
                 </li>
             </ul>
         </div>
