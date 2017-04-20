@@ -124,6 +124,7 @@ header("Location: home.php");
                                     </div>
                                     <div class="mrgn-30-top">
                                         <button type="submit" name = "submit" class="btn btn-default btn-lg">Log In</button>
+                                        <?php $reasons = array("password" => "Wrong username or password"); if(isset($_GET["loginFailed"])) echo $reasons[$_GET["reason"]]; ?>
                                     </div>
                                 </form>
                             </div>
