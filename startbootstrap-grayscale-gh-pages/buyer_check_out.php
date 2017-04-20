@@ -111,7 +111,7 @@ session_write_close();
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="index.html">
+            <a class="navbar-brand page-scroll" href="index.php">
                 <i class="fa fa-play-circle"></i> <span class="light">Ticket</span>Home
             </a>
         </div>
@@ -177,96 +177,137 @@ session_write_close();
 
         <h3 class="text-center">Delivery Info</h3>
 
-        <div class="form-group">
+        <div class="row">
             <div class="col-sm-6">
-                <label for="first-name">First Name</label>
-                <input class="form-control" name="first-name" id="first-name" type="text" placeholder="Enter First Name" required>
+                <div class="form-group">
+                    <label for="first-name">First Name:</label>
+                    <input class="form-control" name="first-name" id="first-name" type="text" placeholder="First Name" required>
+                </div>
             </div>
-
             <div class="col-sm-6">
-                <label for="last-name">Last Name</label>
-                <input class="form-control" name="last-name" id="last-name" type="text" placeholder="Enter Last Name" required>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-sm-6">
-                <label for="street_address">Street Address:</label>
-                <input class="form-control" name="street_address" id="street_address" type="text" placeholder="Enter Street Address" required>
-            </div>
-
-            <div class="col-sm-6">
-                <label for="city">City:</label>
-                <input class="form-control" name="city" id="city" type="text" placeholder="Enter City" required>
+                <div class="form-group">
+                    <label for="last-name">Last Name:</label>
+                    <input class="form-control" name="last-name" id="last-name" type="text" placeholder="Last Name" required>
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-sm-6">
-                <label for="state_initial_delivery">State Initial:</label>
-                <select class="form-control" name="state_initial_delivery" id="state_initial_delivery">
-                    <option value="AL">Alabama</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District Of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
-                    <option value="IA">Iowa</option>
-                    <option value="KS">Kansas</option>
-                    <option value="KY">Kentucky</option>
-                    <option value="LA">Louisiana</option>
-                    <option value="ME">Maine</option>
-                    <option value="MD">Maryland</option>
-                    <option value="MA">Massachusetts</option>
-                    <option value="MI">Michigan</option>
-                    <option value="MN">Minnesota</option>
-                    <option value="MS">Mississippi</option>
-                    <option value="MO">Missouri</option>
-                    <option value="MT">Montana</option>
-                    <option value="NE">Nebraska</option>
-                    <option value="NV">Nevada</option>
-                    <option value="NH">New Hampshire</option>
-                    <option value="NJ">New Jersey</option>
-                    <option value="NM">New Mexico</option>
-                    <option value="NY">New York</option>
-                    <option value="NC">North Carolina</option>
-                    <option value="ND">North Dakota</option>
-                    <option value="OH">Ohio</option>
-                    <option value="OK">Oklahoma</option>
-                    <option value="OR">Oregon</option>
-                    <option value="PA">Pennsylvania</option>
-                    <option value="RI">Rhode Island</option>
-                    <option value="SC">South Carolina</option>
-                    <option value="SD">South Dakota</option>
-                    <option value="TN">Tennessee</option>
-                    <option value="TX">Texas</option>
-                    <option value="UT">Utah</option>
-                    <option value="VT">Vermont</option>
-                    <option value="VA">Virginia</option>
-                    <option value="WA">Washington</option>
-                    <option value="WV">West Virginia</option>
-                    <option value="WI">Wisconsin</option>
-                    <option value="WY">Wyoming</option>
-                </select>
+
+        <script>
+            // This example displays an address form, using the autocomplete feature
+            // of the Google Places API to help users fill in the information.
+
+            // This example requires the Places library. Include the libraries=places
+            // parameter when you first load the API. For example:
+            // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+            var placeSearch, autocomplete;
+            var componentForm = {
+                street_number: 'short_name',
+                route: 'long_name',
+                locality: 'long_name',
+                administrative_area_level_1: 'short_name',
+                postal_code: 'short_name'
+            };
+
+            function initAutocomplete() {
+                // Create the autocomplete object, restricting the search to geographical
+                // location types.
+                autocomplete = new google.maps.places.Autocomplete(
+                    /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+                    {types: ['geocode']});
+
+                // When the user selects an address from the dropdown, populate the address
+                // fields in the form.
+                autocomplete.addListener('place_changed', fillInAddress);
+            }
+
+            function fillInAddress() {
+                // Get the place details from the autocomplete object.
+                var place = autocomplete.getPlace();
+
+                for (var component in componentForm) {
+                    document.getElementById(component).value = '';
+                    document.getElementById(component).disabled = false;
+                }
+
+                // Get each component of the address from the place details
+                // and fill the corresponding field on the form.
+                for (var i = 0; i < place.address_components.length; i++) {
+                    var addressType = place.address_components[i].types[0];
+                    if (componentForm[addressType]) {
+                        var val = place.address_components[i][componentForm[addressType]];
+                        document.getElementById(addressType).value = val;
+                    }
+                }
+            }
+
+            // Bias the autocomplete object to the user's geographical location,
+            // as supplied by the browser's 'navigator.geolocation' object.
+            function geolocate() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var geolocation = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        var circle = new google.maps.Circle({
+                            center: geolocation,
+                            radius: position.coords.accuracy
+                        });
+                        autocomplete.setBounds(circle.getBounds());
+                    });
+                }
+            }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG8qGQLshrWPzNOsg_JnzIMCbVYqW0-QY&libraries=places&callback=initAutocomplete"
+                async defer></script>
+
+
+        <div class="form-group" id="locationField">
+            <label for="locationField">Enter Address Here:</label>
+            <input class="form-control" id="autocomplete" placeholder="Enter your address here" onFocus="geolocate()" type="text"></input>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <div class="form-group">
+                    <label for="street_number">Apt/House #:</label>
+                    <input class="form-control" id="street_number" name="street_number" disabled="true" placeholder="#"></input>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <div class="form-group">
+                    <label for="route">Street:</label>
+                    <input class="form-control" id="route" name="route" disabled="true" placeholder="Street"></input>
+                </div>
             </div>
 
-            <div class="col-sm-6">
-                <label for="zip_code">Zip Code:</label>
-                <input class="form-control" name="zip_code" id="zip_code" type="text" placeholder="Enter Zip Code" pattern="[0-9]{5}" required>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <label for="locality">City:</label>
+                <div><input class="form-control" id="locality" name="locality" disabled="true" placeholder="City"></input></div>
+            </div>
+
+            <div class="col-sm-3">
+                <label for="administrative_area_level_1">State:</label>
+                <div><input class="form-control" id="administrative_area_level_1" name="administrative_area_level_1" disabled="true" placeholder="State" maxlength="2"></input></div>
+            </div>
+
+            <div class="col-sm-3">
+                <label for="postal_code">Zip Code:</label>
+                <div><input class="form-control" id="postal_code" name="postal_code" disabled="true" placeholder="Zip" maxlength="5"></input></div>
             </div>
         </div>
+
+        <br>
+        <br>
 
         <h3 class="text-center">Payment Info</h3>
 
+        <div class="row">
         <div class="form-group">
             <div class="col-sm-6">
                 <label for="first-name-billing">First Name</label>
@@ -278,7 +319,9 @@ session_write_close();
                 <input class="form-control" name="last-name-billing" id="last-name-billing" type="text" placeholder="Enter Last Name" required>
             </div>
         </div>
+        </div>
 
+        <div class="row">
         <div class="form-group">
             <div class="col-sm-6">
                 <label for="card-number">Card Number:</label>
@@ -322,13 +365,15 @@ session_write_close();
                 </div>
             </div>
         </div>
-
-
+        </div>
+        <br>
+        <div class="row">
         <div class="form-group">
             <div class="col-sm-12">
                 <button id="submit-data" type="submit" class="btn btn-default">Submit</button>
                 <button id="reset-data" type="reset" class="btn btn-default">Reset</button>
             </div>
+        </div>
         </div>
 
     </form>

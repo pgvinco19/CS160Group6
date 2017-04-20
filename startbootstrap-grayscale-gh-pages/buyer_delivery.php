@@ -4,7 +4,7 @@
 //var_dump($_SESSION);
 //echo $_SESSION['productID'];
 
-$buyerLocation = $_GET['street_address'] . " " . $_GET['city'] . " " . $_GET['zip_code'];
+$buyerLocation = $_GET['street_number'] . " " . $_GET['route'] . " " . $_GET['locality'] . " " . $_GET['postal_code'];
 
 $productID = $_SESSION['productID'];
 
@@ -99,7 +99,7 @@ mysqli_close($db);
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="index.html">
+            <a class="navbar-brand page-scroll" href="index.php">
                 <i class="fa fa-play-circle"></i> <span class="light">Ticket</span>Home
             </a>
         </div>

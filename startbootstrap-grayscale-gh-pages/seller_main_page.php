@@ -87,7 +87,7 @@ $TPclientID = $_SESSION['clientID'];
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="index.html">
+            <a class="navbar-brand page-scroll" href="index.php">
                 <i class="fa fa-play-circle"></i> <span class="light">Ticket</span>Home
             </a>
         </div>
@@ -164,7 +164,7 @@ $TPclientID = $_SESSION['clientID'];
             echo "</table>";
         } else {
             echo "<table><tr><th>Event Name</th><th>Date</th><th>Location</th><th>Quantity</th></tr>";
-            echo "<tr><td>No available tickets found.</td><td></td><td></td><td></td><tr>";
+            echo "<tr><td>No available tickets found.</td><td></td><td></td><td></td></tr>";
             echo "</table>";
         }
         mysqli_close($db);
@@ -173,19 +173,39 @@ $TPclientID = $_SESSION['clientID'];
 
     <p></p>
 
+    <?php
+    include("../connection.php");
+
+    //Getting seller information
+    $sql_query = "SELECT firstName, lastName, username, email, streetAddress, city, zipCode, state, phoneNumber, creditCardNumber FROM User WHERE clientID = " . $TPclientID;
+    $response = @mysqli_query($db, $sql_query);
+    $row = mysqli_fetch_array($response);
+    $firstName = $row['firstName'];
+    $lastName = $row['lastName'];
+    $username = $row['username'];
+    $email = $row['email'];
+    $streetAddress = $row['streetAddress'];
+    $city = $row['city'];
+    $zipCode = $row['zipCode'];
+    $state = $row['state'];
+    $phoneNumber = $row['phoneNumber'];
+    $creditCardNumber = $row['creditCardNumber'];
+
+    mysqli_close($db);
+    ?>
     <div id='editProfile'; align = "center"; display="none">
         <h3 align="center">Update Profile</h3>
             <form class="form" action="editProfile.php" method="GET">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" name='first_name' id="first_name" required autocomplete="off" placeholder="First Name">
+                            <input type="text" class="form-control" name='first_name' id="first_name" required autocomplete="off" value="<?php echo $firstName?>">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="last_name" id="last_name" required autocomplete="off" placeholder="Last Name">
+                            <input type="text" class="form-control" name="last_name" id="last_name" required autocomplete="off" value="<?php echo $lastName?>">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -193,13 +213,13 @@ $TPclientID = $_SESSION['clientID'];
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="email" id="email" required autocomplete="off" placeholder="Email">
+                            <input type="text" class="form-control" name="email" id="email" required autocomplete="off" value="<?php echo $email?>">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="phone" id="phone" required autocomplete="off" placeholder="Phone">
+                            <input type="text" class="form-control" name="phone" id="phone" required autocomplete="off" value="<?php echo $phoneNumber?>">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -209,7 +229,7 @@ $TPclientID = $_SESSION['clientID'];
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username id="username" required autocomplete="off" placeholder="Username: Cannot be changed" disabled>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Username [<?php echo $username?>] can't be changed" disabled=True>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -221,81 +241,28 @@ $TPclientID = $_SESSION['clientID'];
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="username" class="form-control" name="creditcard" id="creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
+                    <input type="text" class="form-control" name="creditcard" id="creditcard" required autocomplete="off" value="<?php echo $creditCardNumber?>">
                     <p class="help-block text-danger"></p>
                 </div>
                 <div class="form-group">
-                    <input type="username" class="form-control" name="street" id="street" required autocomplete="off" placeholder="Street Address">
+                    <input type="text" class="form-control" name="street" id="street" required autocomplete="off" value="<?php echo $streetAddress?>">
                     <p class="help-block text-danger"></p>
                 </div>
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="city" id="city" required autocomplete="off" placeholder="City">
+                            <input type="text" class="form-control" name="city" id="city" required autocomplete="off" value="<?php echo $city?>">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
 
                     <div class="col-sm-3">
-                        <select class="form-control" name="state_initial_delivery" id="state_initial_delivery">
-                            <option selected disabled>State</option>
-                            <option value="AL">Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="MD">Maryland</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NY">New York</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
-                            <option value="VA">Virginia</option>
-                            <option value="WA">Washington</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WY">Wyoming</option>
-                        </select>
+                        <input type="text" class="form-control" id="state_initial_delivery" name="state_initial_delivery" value="<?php echo $state?>" maxlength="2">
                     </div>
                     <div class="col-xs-12 col-sm-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="zip" id="zip" required autocomplete="off" placeholder="Zip Code">
+                            <input type="text" class="form-control" name="zip" id="zip" required autocomplete="off" value="<?php echo $zipCode?>">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>

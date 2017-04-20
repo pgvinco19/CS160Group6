@@ -8,10 +8,10 @@ if(isset($_GET["submit"])){
         $username = stripcslashes(mysqli_real_escape_string($db, $_GET['username']));
         $password = stripcslashes(mysqli_real_escape_string($db,$_GET['password']));
         $creditcard = stripcslashes(mysqli_real_escape_string($db, $_GET['creditcard']));
-        $street = stripcslashes(mysqli_real_escape_string($db, $_GET['street']));
-        $city = stripcslashes(mysqli_real_escape_string($db, $_GET['city']));
-        $state = stripcslashes(mysqli_real_escape_string($db, $_GET['state_initial_delivery']));
-        $zip = stripcslashes(mysqli_real_escape_string($db, $_GET['zip']));
+        $street = stripcslashes(mysqli_real_escape_string($db, $_GET['street_number'] . " " . $_GET['route']));
+        $city = stripcslashes(mysqli_real_escape_string($db, $_GET['locality']));
+        $state = stripcslashes(mysqli_real_escape_string($db, $_GET['administrative_area_level_1']));
+        $zip = stripcslashes(mysqli_real_escape_string($db, $_GET['postal_code']));
         $query = "SELECT email FROM User where email='".$email."'";
         $result = mysqli_query($db,$query);
         $numResults = mysqli_num_rows($result);

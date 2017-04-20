@@ -127,6 +127,10 @@ header("Location: home.php");
                                     </div>
                                 </form>
                             </div>
+
+
+
+
                             <div class="tab-pane fade in" id="signup">
                                 <p></p>
                                 <form id="signup" method = "GET" action="../signUp.php">
@@ -178,83 +182,111 @@ header("Location: home.php");
                                         <input type="text" class="form-control" id="creditcard" name = "creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
                                         <p class="help-block text-danger"></p>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="street" name = "street" required autocomplete="off" placeholder="Street Address">
-                                            <p class="help-block text-danger"></p>
+
+
+
+                                    <script>
+                                        // This example displays an address form, using the autocomplete feature
+                                        // of the Google Places API to help users fill in the information.
+
+                                        // This example requires the Places library. Include the libraries=places
+                                        // parameter when you first load the API. For example:
+                                        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+                                        var placeSearch, autocomplete;
+                                        var componentForm = {
+                                            street_number: 'short_name',
+                                            route: 'long_name',
+                                            locality: 'long_name',
+                                            administrative_area_level_1: 'short_name',
+                                            postal_code: 'short_name'
+                                        };
+
+                                        function initAutocomplete() {
+                                            // Create the autocomplete object, restricting the search to geographical
+                                            // location types.
+                                            autocomplete = new google.maps.places.Autocomplete(
+                                                /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+                                                {types: ['geocode']});
+
+                                            // When the user selects an address from the dropdown, populate the address
+                                            // fields in the form.
+                                            autocomplete.addListener('place_changed', fillInAddress);
+                                        }
+
+                                        function fillInAddress() {
+                                            // Get the place details from the autocomplete object.
+                                            var place = autocomplete.getPlace();
+
+                                            for (var component in componentForm) {
+                                                document.getElementById(component).value = '';
+                                                document.getElementById(component).disabled = false;
+                                            }
+
+                                            // Get each component of the address from the place details
+                                            // and fill the corresponding field on the form.
+                                            for (var i = 0; i < place.address_components.length; i++) {
+                                                var addressType = place.address_components[i].types[0];
+                                                if (componentForm[addressType]) {
+                                                    var val = place.address_components[i][componentForm[addressType]];
+                                                    document.getElementById(addressType).value = val;
+                                                }
+                                            }
+                                        }
+
+                                        // Bias the autocomplete object to the user's geographical location,
+                                        // as supplied by the browser's 'navigator.geolocation' object.
+                                        function geolocate() {
+                                            if (navigator.geolocation) {
+                                                navigator.geolocation.getCurrentPosition(function(position) {
+                                                    var geolocation = {
+                                                        lat: position.coords.latitude,
+                                                        lng: position.coords.longitude
+                                                    };
+                                                    var circle = new google.maps.Circle({
+                                                        center: geolocation,
+                                                        radius: position.coords.accuracy
+                                                    });
+                                                    autocomplete.setBounds(circle.getBounds());
+                                                });
+                                            }
+                                        }
+                                    </script>
+
+                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBG8qGQLshrWPzNOsg_JnzIMCbVYqW0-QY&libraries=places&callback=initAutocomplete"
+                                            async defer></script>
+
+                                    <div class="form-group" id="locationField">
+                                        <input class="form-control" id="autocomplete" placeholder="Enter your address here" onFocus="geolocate()" type="text"></input>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-4">
+                                            <div class="form-group">
+                                                <input class="form-control" id="street_number" name="street_number" disabled="true" placeholder="#"></input>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-8">
+                                            <div class="form-group">
+                                                <input class="form-control" id="route" name="route" disabled="true" placeholder="Street"></input>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="city" name = "city" required autocomplete="off" placeholder="City">
-                                                <p class="help-block text-danger"></p>
-                                            </div>
+                                            <div><input class="form-control" id="locality" name="locality" disabled="true" placeholder="City"></input></div>
                                         </div>
 
                                         <div class="col-sm-3">
-                                            <select class="form-control" name="state_initial_delivery" id="state_initial_delivery">
-                                                <option selected disabled>State</option>
-                                                <option value="AL">Alabama</option>
-                                                <option value="AK">Alaska</option>
-                                                <option value="AZ">Arizona</option>
-                                                <option value="AR">Arkansas</option>
-                                                <option value="CA">California</option>
-                                                <option value="CO">Colorado</option>
-                                                <option value="CT">Connecticut</option>
-                                                <option value="DE">Delaware</option>
-                                                <option value="DC">District Of Columbia</option>
-                                                <option value="FL">Florida</option>
-                                                <option value="GA">Georgia</option>
-                                                <option value="HI">Hawaii</option>
-                                                <option value="ID">Idaho</option>
-                                                <option value="IL">Illinois</option>
-                                                <option value="IN">Indiana</option>
-                                                <option value="IA">Iowa</option>
-                                                <option value="KS">Kansas</option>
-                                                <option value="KY">Kentucky</option>
-                                                <option value="LA">Louisiana</option>
-                                                <option value="ME">Maine</option>
-                                                <option value="MD">Maryland</option>
-                                                <option value="MA">Massachusetts</option>
-                                                <option value="MI">Michigan</option>
-                                                <option value="MN">Minnesota</option>
-                                                <option value="MS">Mississippi</option>
-                                                <option value="MO">Missouri</option>
-                                                <option value="MT">Montana</option>
-                                                <option value="NE">Nebraska</option>
-                                                <option value="NV">Nevada</option>
-                                                <option value="NH">New Hampshire</option>
-                                                <option value="NJ">New Jersey</option>
-                                                <option value="NM">New Mexico</option>
-                                                <option value="NY">New York</option>
-                                                <option value="NC">North Carolina</option>
-                                                <option value="ND">North Dakota</option>
-                                                <option value="OH">Ohio</option>
-                                                <option value="OK">Oklahoma</option>
-                                                <option value="OR">Oregon</option>
-                                                <option value="PA">Pennsylvania</option>
-                                                <option value="RI">Rhode Island</option>
-                                                <option value="SC">South Carolina</option>
-                                                <option value="SD">South Dakota</option>
-                                                <option value="TN">Tennessee</option>
-                                                <option value="TX">Texas</option>
-                                                <option value="UT">Utah</option>
-                                                <option value="VT">Vermont</option>
-                                                <option value="VA">Virginia</option>
-                                                <option value="WA">Washington</option>
-                                                <option value="WV">West Virginia</option>
-                                                <option value="WI">Wisconsin</option>
-                                                <option value="WY">Wyoming</option>
-                                            </select>
+                                            <div><input class="form-control" id="administrative_area_level_1" name="administrative_area_level_1" disabled="true" placeholder="State" maxlength="2"></input></div>
                                         </div>
-                                        <div class="col-xs-12 col-sm-3">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="zip" name = "zip" required autocomplete="off" placeholder="Zip Code">
-                                                <p class="help-block text-danger"></p>
-                                            </div>
+
+                                        <div class="col-sm-3">
+                                            <div><input class="form-control" id="postal_code" name="postal_code" disabled="true" placeholder="Zip" maxlength="5"></input></div>
                                         </div>
                                     </div>
-
+                                    <br>
                                     <div class="mrgn-30-top">
                                         <button type="submit" name = "submit" class="btn btn-default btn-lg">Sign Up</button>
                                     </div>
