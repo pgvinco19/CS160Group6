@@ -100,7 +100,7 @@ $TPclientID = $_SESSION['clientID'];
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php#seller">Seller</a>
+                    <a class="page-scroll" href="logout.php">Logout</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="index.php#buyer">Buyer</a>
