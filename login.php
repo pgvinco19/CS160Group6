@@ -26,8 +26,8 @@ if(isset($_GET["submit"])){
 				$cID = $row['clientID'];
 				$_SESSION['clientID'] = $cID;
                 header('Location: startbootstrap-grayscale-gh-pages/seller_main_page.php');
-			}else {
-				$error = "Incorrect username or password"; 
+			}elseif(!$row) {
+				die(header('Location: startbootstrap-grayscale-gh-pages/index.php?loginFailed=true&reason=password'));
 			}
 		}
 exit;
