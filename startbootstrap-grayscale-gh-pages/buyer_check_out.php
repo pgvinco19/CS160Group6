@@ -1,9 +1,9 @@
 <?php session_start();
 $productID = $_GET['productID'];
 $_SESSION['productID'] = $productID;
-echo $_SESSION['productID'];
-var_dump($_SESSION);
-var_dump($GLOBALS);
+//echo $_SESSION['productID'];
+//var_dump($_SESSION);
+//var_dump($GLOBALS);
 session_write_close();
 ?>
 

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9d99737-aa49-4531-a6c2-9315863cc35f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_check_out.php" afterPath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_check_out.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_delivery.php" afterPath="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_delivery.php" />
@@ -17,23 +16,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1590">
-              <caret line="106" column="16" lean-forward="false" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="buyer_check_out.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_check_out.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="282" column="18" lean-forward="true" selection-start-line="282" selection-start-column="18" selection-end-line="282" selection-end-column="18" />
+            <state relative-caret-position="-1134">
+              <caret line="105" column="12" lean-forward="false" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
               <folding>
-                <marker date="1492719293000" expanded="true" signature="4224:4334" ph="SELECT event... Ticket_Products" />
+                <marker date="1492720708000" expanded="false" signature="19322:19328" ph="©" />
               </folding>
             </state>
           </provider>
@@ -42,15 +31,15 @@
       <file leaf-file-name="buyer_delivery.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_delivery.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="508">
+              <caret line="222" column="28" lean-forward="true" selection-start-line="222" selection-start-column="28" selection-end-line="222" selection-end-column="28" />
               <folding>
-                <marker date="1492719293000" expanded="true" signature="350:475" ph="SELECT TPcli... Ticket_Products" />
-                <marker date="1492719293000" expanded="true" signature="805:868" ph="SELECT stree... User" />
-                <marker date="1492719293000" expanded="true" signature="1198:1263" ph="UPDATE Ticke... " />
-                <marker date="1492719293000" expanded="true" signature="1591:1637" ph="DELETE from " />
-                <marker date="1492719293000" expanded="true" signature="1934:2171" ph="INSERT INTO Transaction_Log... " />
-                <marker date="1492719293000" expanded="true" signature="8040:8102" ph="SELECT numbe... Ticket_Products" />
+                <marker date="1492724538000" expanded="true" signature="356:481" ph="SELECT TPcli... Ticket_Products" />
+                <marker date="1492724538000" expanded="true" signature="812:875" ph="SELECT stree... User" />
+                <marker date="1492724538000" expanded="true" signature="1205:1270" ph="UPDATE Ticke... " />
+                <marker date="1492724538000" expanded="true" signature="1598:1644" ph="DELETE from " />
+                <marker date="1492724538000" expanded="true" signature="7184:7246" ph="SELECT numbe... Ticket_Products" />
+                <marker date="1492724538000" expanded="true" signature="7477:7713" ph="INSERT INTO Transaction_Log... " />
               </folding>
             </state>
           </provider>
@@ -109,12 +98,12 @@
         <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/editProfile.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/signUp.php" />
-        <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/index.php" />
         <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_search.php" />
         <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_add_modify_item.html" />
         <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/seller_main_page.php" />
-        <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_delivery.php" />
         <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_check_out.php" />
+        <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/index.php" />
+        <option value="$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_delivery.php" />
       </list>
     </option>
   </component>
@@ -180,6 +169,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="PHP" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -204,6 +194,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/login.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -211,7 +202,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/logout.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -219,7 +209,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/logout.php</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -409,7 +398,8 @@
       <workItem from="1492005774111" duration="7737000" />
       <workItem from="1492049624735" duration="3839000" />
       <workItem from="1492665085788" duration="12464000" />
-      <workItem from="1492713779356" duration="3625000" />
+      <workItem from="1492713779356" duration="3811000" />
+      <workItem from="1492719864279" duration="3885000" />
     </task>
     <task id="LOCAL-00001" summary="commit some php file">
       <created>1491759946614</created>
@@ -502,11 +492,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492015793947</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="commit some php file 4">
+      <created>1492719658245</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1492719658245</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69686000" />
+    <option name="totallyTimeSpent" value="73757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="793" extended-state="6" />
@@ -601,7 +598,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
           <caret line="223" column="62" lean-forward="false" selection-start-line="223" selection-start-column="48" selection-end-line="223" selection-end-column="62" />
-          <folding />
+          <folding>
+            <marker date="1492720125000" expanded="true" signature="4230:4340" ph="SELECT event... Ticket_Products" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -647,7 +646,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3120">
           <caret line="208" column="51" lean-forward="false" selection-start-line="208" selection-start-column="51" selection-end-line="208" selection-end-column="51" />
-          <folding />
+          <folding>
+            <marker date="1492720125000" expanded="true" signature="4230:4340" ph="SELECT event... Ticket_Products" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -721,7 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,17 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14">
           <caret line="10" column="63" lean-forward="false" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
-          <folding>
-            <marker date="1492713772000" expanded="true" signature="1054:1101" ph="SELECT email... User" />
-            <marker date="1492713772000" expanded="true" signature="1554:1729" ph="INSERT INTO User" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/seller_add_modify_item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -748,9 +737,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="61" lean-forward="true" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
-          <folding>
-            <marker date="1492713772000" expanded="true" signature="518:599" ph="SELECT clien... User" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -758,46 +745,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2077">
           <caret line="89" column="63" lean-forward="false" selection-start-line="89" selection-start-column="63" selection-end-line="89" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_check_out.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="327" column="76" lean-forward="true" selection-start-line="327" selection-start-column="76" selection-end-line="327" selection-end-column="76" />
           <folding>
-            <marker date="1492716968000" expanded="false" signature="4308:4319" ph="..." />
-            <marker date="1492716968000" expanded="false" signature="4481:4493" ph="..." />
-            <marker date="1492716968000" expanded="false" signature="4751:4767" ph="..." />
-            <marker date="1492716968000" expanded="true" signature="4959:5061" ph="SELECT event... Ticket_Products" />
-            <marker date="1492716968000" expanded="true" signature="5970:6109" ph="SELECT first... User" />
-            <marker date="1492716968000" expanded="false" signature="11263:11269" ph="©" />
+            <marker date="1492720125000" expanded="true" signature="4230:4340" ph="SELECT event... Ticket_Products" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seller_add_modify_item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="25" />
+          <folding>
+            <marker date="1492719857000" expanded="true" signature="562:735" ph="INSERT INTO Ticket_Products... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_delivery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="222" column="28" lean-forward="true" selection-start-line="222" selection-start-column="28" selection-end-line="222" selection-end-column="28" />
+          <folding>
+            <marker date="1492724538000" expanded="true" signature="356:481" ph="SELECT TPcli... Ticket_Products" />
+            <marker date="1492724538000" expanded="true" signature="812:875" ph="SELECT stree... User" />
+            <marker date="1492724538000" expanded="true" signature="1205:1270" ph="UPDATE Ticke... " />
+            <marker date="1492724538000" expanded="true" signature="1598:1644" ph="DELETE from " />
+            <marker date="1492724538000" expanded="true" signature="7184:7246" ph="SELECT numbe... Ticket_Products" />
+            <marker date="1492724538000" expanded="true" signature="7477:7713" ph="INSERT INTO Transaction_Log... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="106" column="16" lean-forward="false" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_delivery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="-1134">
+          <caret line="105" column="12" lean-forward="false" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
           <folding>
-            <marker date="1492719293000" expanded="true" signature="350:475" ph="SELECT TPcli... Ticket_Products" />
-            <marker date="1492719293000" expanded="true" signature="805:868" ph="SELECT stree... User" />
-            <marker date="1492719293000" expanded="true" signature="1198:1263" ph="UPDATE Ticke... " />
-            <marker date="1492719293000" expanded="true" signature="1591:1637" ph="DELETE from " />
-            <marker date="1492719293000" expanded="true" signature="1934:2171" ph="INSERT INTO Transaction_Log... " />
-            <marker date="1492719293000" expanded="true" signature="8040:8102" ph="SELECT numbe... Ticket_Products" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/startbootstrap-grayscale-gh-pages/buyer_check_out.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="282" column="18" lean-forward="true" selection-start-line="282" selection-start-column="18" selection-end-line="282" selection-end-column="18" />
-          <folding>
-            <marker date="1492719293000" expanded="true" signature="4224:4334" ph="SELECT event... Ticket_Products" />
+            <marker date="1492720708000" expanded="false" signature="19322:19328" ph="©" />
           </folding>
         </state>
       </provider>

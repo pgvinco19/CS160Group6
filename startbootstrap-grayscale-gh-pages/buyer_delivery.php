@@ -1,8 +1,8 @@
 <?php session_start();
 
-var_dump($GLOBALS);
-var_dump($_SESSION);
-echo $_SESSION['productID'];
+//var_dump($GLOBALS);
+//var_dump($_SESSION);
+//echo $_SESSION['productID'];
 
 $buyerLocation = $_GET['street_number'] . " " . $_GET['route'] . " " . $_GET['locality'] . " " . $_GET['postal_code'];
 $BuyerCreditCardNumber = md5($_GET['card-number']);
@@ -23,6 +23,7 @@ $eventName = $row['eventName'];
 $eventDate = $row['eventDate'];
 $eventCategory = $row['eventCategory'];
 $ticketPrice = $row['ticketPrice'];
+
 
 $sql_query = "SELECT streetAddress, city, zipCode FROM User WHERE clientID = " . $clientID;
 $response = @mysqli_query($db, $sql_query);
@@ -53,31 +54,6 @@ if ($ticketQuantity > 0)
         //Execute Code
         mysqli_stmt_execute($stmt);
     }
-}
-
-
-//------------------------------------------------------------------------------------------------------------------
-//Transaction Log
-
-//SQL Query
-$sql_query = "INSERT INTO Transaction_Log (TLclientID, eventName, eventDate, eventCategory, ticketPrice, 
-purchaseDate, purchaseStatus, paymentApproved, BuyerCreditCardNumber, dropOffLocation, pickUpLocation) 
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? , ?)";
-
-$stmt = mysqli_prepare($db, $sql_query);
-
-//Bind the Variables to sql
-mysqli_stmt_bind_param($stmt, "isssdssssss", $clientID, $eventName, $eventDate, $eventCategory, $ticketPrice,
-date("Y-m-d"), "Approved", "Pending", $BuyerCreditCardNumber, $buyerLocation, $sellerLocation);
-
-//Execute Code
-mysqli_stmt_execute($stmt);
-
-$affected_rows = mysqli_stmt_affected_rows($stmt);
-if($affected_rows != 1)
-{
-    echo 'Error Occurred<br />';
-    echo mysqli_error();
 }
 
 mysqli_close($db);
@@ -221,10 +197,37 @@ $row = mysqli_fetch_array($response);
 $ticketQuantity = $row['numberOfTickets'];
 
 
-
 mysqli_close($db);
 
 ?>
+
+<?php
+include("../connection.php");
+
+//SQL Query
+$sql_query2 = "INSERT INTO Transaction_Log (TLclientID, eventName, eventDate, eventCategory, ticketPrice, 
+purchaseDate, purchaseStatus, paymentApproved, BuyerCreditCardNumber, dropOffLocation, pickUpLocation) 
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+$stmt2 = mysqli_prepare($db, $sql_query2);
+
+$todayDate = date("Y-m-d");
+$paymentApproved = "Pending";
+$purchaseStatus = "Pending";
+
+//Bind the Variables to sql
+mysqli_stmt_bind_param($stmt2, "isssdssssss", $clientID, $eventName, $eventDate, $eventCategory, $ticketPrice,
+    $todayDate, $purchaseStatus, $paymentApproved, $BuyerCreditCardNumber, $buyerLocation, $sellerLocation);
+
+//Execute Code
+mysqli_stmt_execute($stmt2);
+
+mysqli_stmt_close($stmt2);
+mysqli_close($db);
+?>
+
+
+
 
 <script src="vendor/jquery/jquery.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
