@@ -179,14 +179,14 @@ session_write_close();
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label for="first-name">First Name:</label>
-                    <input class="form-control" name="first-name" id="first-name" type="text" placeholder="First Name" required>
+                    <label for="full-name">Full Name (First, Last):</label>
+                    <input class="form-control" name="full-name" id="full-name" type="text" placeholder="Full Name" required>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
-                    <label for="last-name">Last Name:</label>
-                    <input class="form-control" name="last-name" id="last-name" type="text" placeholder="Last Name" required>
+                    <label for="email">Email:</label>
+                    <input class="form-control" name="email" id="email" type="email" placeholder="email" required>
                 </div>
             </div>
         </div>

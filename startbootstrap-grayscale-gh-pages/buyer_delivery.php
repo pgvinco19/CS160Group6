@@ -226,7 +226,23 @@ mysqli_stmt_close($stmt2);
 mysqli_close($db);
 ?>
 
+<?php
 
+$totalPrice = $ticketPrice + ($ticketPrice * .05);
+
+$msg = "Thank you for purchasing with ETES\nPurchase Summary:\nEvent Name: " . $eventName . "\nEvent Date: " . $eventDate
+    . "\nEvent Category: " . $eventCategory . "\nTotal Price: " . $totalPrice . "\nDrop Off Location: ". $buyerLocation;
+
+
+$msg = wordwrap($msg,70);
+
+$to = $_GET['email'];
+$subject = "ETES Ticket Purchase Receipt";
+$headers = "From: webmaster@etes.com";
+
+mail($to, $subject, $msg, $headers);
+
+?>
 
 
 <script src="vendor/jquery/jquery.js"></script>
