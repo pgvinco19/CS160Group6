@@ -189,7 +189,7 @@ $response = mysqli_query($db, $sql);
 
 <!-- Footer -->
 <footer>
-    <div class="container" style="position:absolute; BOTTOM:0px; text-align:center;">
+    <div class="container" style="display:none; position:absolute; BOTTOM:0px; text-align:center;">
         <p>Copyright &copy; ETES 2017</p>
     </div>
 </footer>
