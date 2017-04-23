@@ -86,7 +86,7 @@
 </section>
 
  
-<img src="img/shoppingcart2.png" style="position:absolute; TOP:90px; RIGHT:170px; " width="70" height="70">
+<img src="img/shoppingcart2.png" style="display: none; position:absolute; TOP:90px; RIGHT:170px; " width="70" height="70">
 
 
 
@@ -189,7 +189,7 @@ $response = mysqli_query($db, $sql);
 
 <!-- Footer -->
 <footer>
-    <div class="container" style="position:absolute; BOTTOM:0px; LEFT:520px;">
+    <div class="container" style="position:absolute; BOTTOM:0px; text-align:center;">
         <p>Copyright &copy; ETES 2017</p>
     </div>
 </footer>
