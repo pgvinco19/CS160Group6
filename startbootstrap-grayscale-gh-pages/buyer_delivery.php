@@ -212,6 +212,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt2 = mysqli_prepare($db, $sql_query2);
 
+date_default_timezone_set('America/Los_Angeles');
 $todayDate = date("Y-m-d");
 $paymentApproved = "Pending";
 $purchaseStatus = "Pending";
