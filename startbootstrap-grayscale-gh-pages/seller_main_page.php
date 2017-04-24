@@ -49,12 +49,10 @@ $TPclientID = $_SESSION['clientID'];
         tr:nth-child(even){background: rgba(255, 255, 255, 0.1)}
         body { padding-top: 20px; }
         section {padding-top: 70px;}
-        .button_1{
-            padding-left: 70px
+        .button_section{
+            padding-left: 100px
         }
-        .button_2{
-            padding-right: 70px
-        }
+     
         form {
             /* Just to center the form on the page */
             margin-top:  10px;
@@ -132,14 +130,15 @@ $TPclientID = $_SESSION['clientID'];
 
         //-->
     </script>
-    <div class="button_section">
-        <div style ='float: left' class = "button_1">
+     <div class="row">
+        <div class="button_section">
+            <div class="col-sm-12">
             <a href="seller_add_modify_item.html" type="submit" class="btn btn-default">Add Product</a>
-        </div>
-        <div style ='float: right' class = "button_2" >
             <a href="#editProfile" onclick="toggle_visibility('editProfile')" type="submit" class="btn btn-default"> Edit Profile</a>
+            </div>
         </div>
     </div>
+
 
 </section>
 
