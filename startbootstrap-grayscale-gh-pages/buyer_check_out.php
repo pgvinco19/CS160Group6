@@ -158,6 +158,98 @@ session_write_close();
 
     mysqli_close($db);
     ?>
+    <?php
+
+$submitbutton= isset($_POST['submitbutton']);
+
+$number= isset($_POST['card-number']);
+
+function validatecard($number)
+ {
+    global $type;
+
+    $cardtype = array(
+        "electron" => "/^(4026|417500|4405|4508|4844|4913|4917)\d+$/",
+        "maestro" => "/^(5018|5020|5038|5612|5893|6304|6759|6761|6762|6763|0604|6390)\d+$/",
+        "dankort" => "/^(5019)\d+$/",
+        "interpayment"=> "/^(636)\d+$/",
+        "unionpay"=> "/^(62|88)\d+$/",
+        "visa"=> "/^4[0-9]{12}(?:[0-9]{3})?$/",
+        "mastercard"=> "/^5[1-5][0-9]{14}$/",
+        "amex"=> "/^3[47][0-9]{13}$/",
+        "diners"=> "/^3(?:0[0-5]|[68][0-9])[0-9]{11}$/",
+        "discover"=> "/^6(?:011|5[0-9]{2})[0-9]{12}$/",
+        "jcb"=> "/^(?:2131|1800|35\d{3})\d{11}$/",
+    );
+
+    if (preg_match($cardtype['electron'],$number))
+    {
+    $type= "electron";
+        return true;
+    
+    }
+    else if (preg_match($cardtype['maestro'],$number))
+    {
+    $type= "maestro";
+        return true;
+    }
+    else if (preg_match($cardtype['dankort'],$number))
+    {
+    $type= "dankort";
+        return true;
+    
+    }
+    else if (preg_match($cardtype['interpayment'],$number))
+    {
+    $type= "interpayment";
+        return true;
+    }
+     else if (preg_match($cardtype['unionpay'],$number))
+    {
+    $type= "unionpay";
+        return true;
+    }
+         else if (preg_match($cardtype['visa'],$number))
+    {
+    $type= "visa";
+        return true;
+    }
+         else if (preg_match($cardtype['mastercard'],$number))
+    {
+    $type= "mastercard";
+        return true;
+    }
+         else if (preg_match($cardtype['amex'],$number))
+    {
+    $type= "amex";
+        return true;
+    }
+         else if (preg_match($cardtype['diners'],$number))
+    {
+    $type= "diners";
+        return true;
+    }
+         else if (preg_match($cardtype['discover'],$number))
+    {
+    $type= "discover";
+        return true;
+    }
+         else if (preg_match($cardtype['jcb'],$number))
+    {
+    $type= "jcb";
+        return true;
+    }
+    else
+    {
+        return false;
+    } 
+ }
+
+validatecard($number);
+
+
+?>
+
 
     <div id="order-list" class='order'>
         <h3 class="text-center">Orders</h3>
@@ -325,7 +417,15 @@ session_write_close();
             <div class="col-sm-6">
                 <label for="card-number">Card Number:</label>
                 <input type='text' id='card-number' name='card-number' placeholder='1234 1234 1234 1234'
-                            title='Card Number' class="form-control" required>
+                            title='Card Number' class="form-control" required value = '<?php if ($submitbutton) {echo "$number"; } ?>'>
+                            <?php 
+                        if ($submitbutton){
+                        if (validatecard($number) == false)
+                {
+                    echo " <red>This credit card number is invalid</red>";
+                }
+            }
+                ?>
             </div>
 
             <div class="col-sm-3">
