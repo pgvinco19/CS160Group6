@@ -180,7 +180,8 @@ mysqli_close($db);
     
     directionsService.route(request, function(response, status) {
                             if (status == google.maps.DirectionsStatus.OK) {
-                            directionsDisplay.setDirections(response);
+                                trafficModel = 'pessimistic';
+                                directionsDisplay.setDirections(response);
                             }
                             });
         </script>
