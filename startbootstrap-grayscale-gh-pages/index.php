@@ -180,7 +180,7 @@ header("Location: home.php");
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="creditcard" name = "creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
+                                        <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="16" class="form-control" id="creditcard" name = "creditcard" required autocomplete="off" placeholder="Credit Card: xxxx-xxxx-xxxx-xxxx">
                                         <p class="help-block text-danger"></p>
                                     </div>
 

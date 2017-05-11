@@ -416,7 +416,7 @@ validatecard($number);
         <div class="form-group">
             <div class="col-sm-6">
                 <label for="card-number">Card Number:</label>
-                <input type='text' id='card-number' name='card-number' placeholder='1234 1234 1234 1234'
+                <input type='text' onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="16" id='card-number' name='card-number' placeholder='1234 1234 1234 1234'
                             title='Card Number' class="form-control" required value = '<?php if ($submitbutton) {echo "$number"; } ?>'>
                             <?php 
                         if ($submitbutton){

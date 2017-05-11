@@ -240,7 +240,7 @@ $TPclientID = $_SESSION['clientID'];
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="creditcard" id="creditcard" required autocomplete="off" value="<?php echo $creditCardNumber?>">
+                    <input type="text" class="form-control" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="16" name="creditcard" id="creditcard" required autocomplete="off" value="<?php echo $creditCardNumber?>">
                     <p class="help-block text-danger"></p>
                 </div>
                 <div class="form-group">
