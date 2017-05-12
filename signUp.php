@@ -1,6 +1,7 @@
 <?php 
 include('connection.php'); 
-if(isset($_GET["submit"])){
+if(isset($_GET["submit"]))
+{
 	    $first_name = stripcslashes(mysqli_real_escape_string($db,$_GET['first_name']));
         $last_name = stripcslashes(mysqli_real_escape_string($db,$_GET['last_name']));
         $email = stripcslashes(mysqli_real_escape_string($db,$_GET['email']));
@@ -12,23 +13,38 @@ if(isset($_GET["submit"])){
         $city = stripcslashes(mysqli_real_escape_string($db, $_GET['locality']));
         $state = stripcslashes(mysqli_real_escape_string($db, $_GET['administrative_area_level_1']));
         $zip = stripcslashes(mysqli_real_escape_string($db, $_GET['postal_code']));
-        $query = "SELECT email FROM User where email='".$email."'";
-        $result = mysqli_query($db,$query);
-        $numResults = mysqli_num_rows($result);
+
+        $query = "SELECT * FROM User WHERE email='$email'";
+        $response = mysqli_query($db, $query);
+        $numResults = mysqli_num_rows($response);
+
+        $query = "SELECT * FROM User WHERE username='$username'";
+        $response = @mysqli_query($db, $query);
+        $numResults2 = mysqli_num_rows($response);
+
+        //print 'Check Username: ' . $numResults2;
+        //print 'Check Email:' . $numResults;
+
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
         {
             $message =  "Invalid email address please type a valid email!!";
-            echo "hello";
+            //echo $message;
+            //echo "<script>alert('$message');</script>";
         }
-        elseif($numResults>=1)
+        elseif($numResults >= 1)
         {
             $message = $email." Email already exist!!";
-            echo "hi";
+            //echo $message;
+            //echo "<script>alert('$message');</script>";
+        }
+        elseif($numResults2 >= 1)
+        {
+            $message = $username." already exist!!";
+            //echo $message;
+            //echo "<script>alert('$message');</script>";
         }
         else
         {
-
-
         	$sql_query = "INSERT INTO  User (firstName,lastName, password, username, email, streetAddress, city, zipCode, state, phoneNumber, creditCardNumber) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
         	$stmt = mysqli_prepare($db, $sql_query); 
 
@@ -37,13 +53,13 @@ if(isset($_GET["submit"])){
         	//echo mysqli_connect_error();
         	//var_dump($stmt);
         	//mysqli_stmt_close($stmt);
-           //mysqli_query($db, "INSERT INTO User (firstName,lastName, password, username, email, streetAddress, city, zipCode, state, phoneNumber, creditCardNumber) values ('".$first_name."','".$last_name."', '".md5($password)."','".$username."','".$email."','".$street."','".$city."','".$zip."','".$state."','".$phone."','".$creditcard."')");
+            //mysqli_query($db, "INSERT INTO User (firstName,lastName, password, username, email, streetAddress, city, zipCode, state, phoneNumber, creditCardNumber) values ('".$first_name."','".$last_name."', '".md5($password)."','".$username."','".$email."','".$street."','".$city."','".$zip."','".$state."','".$phone."','".$creditcard."')");
 
             $message = "Signup Sucessfully!!";
 
-           //echo mysqli_error($db);
+            //echo mysqli_error($db);
 
-        //echo "INSERT INTO User (firstName,lastName, password, username, email, streetAddress, city, zipCode, state, phoneNumber, creditCardNumber) values ('".$first_name."','".$last_name."', '".md5($password)."','".$username."','".$email."','".$street."','".$city."','".$zip."','".$state."','".$phone."','".$creditcard."')";
+            //echo "INSERT INTO User (firstName,lastName, password, username, email, streetAddress, city, zipCode, state, phoneNumber, creditCardNumber) values ('".$first_name."','".$last_name."', '".md5($password)."','".$username."','".$email."','".$street."','".$city."','".$zip."','".$state."','".$phone."','".$creditcard."')";
         }
 
 
