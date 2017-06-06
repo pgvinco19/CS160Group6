@@ -1,4 +1,4 @@
 <?php
-$db = mysqli_connect('cs160admin.ceoa4jgxum7u.us-west-2.rds.amazonaws.com','cs160admin','cs160admin','cs160database')
+$db = mysqli_connect('REMOVED FOR SECURITY','REMOVED FOR SECURITY','REMOVED FOR SECURITY','REMOVED FOR SECURITY')
 or die('Error connecting to MySQL server.');
 ?>
